@@ -56,6 +56,8 @@ MonoBehaviour:
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/UISetExamples.unity"
   - m_enabled: 1
     m_path: Assets/ShuaiAssets/GameTryScene.unity
+  - m_enabled: 1
+    m_path: Assets/ShuaiAssets/MultiMrTry.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
