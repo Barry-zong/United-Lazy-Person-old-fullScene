@@ -20,46 +20,46 @@ MonoBehaviour:
     rid: 6556769537872101597
   m_OverrideGlobalSceneList: 1
   m_Scenes:
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/BodyPoseDetectionExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/ComprehensiveRigExample.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/ConcurrentHandsControllersExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/DistanceGrabExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/GestureExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/HandGrabExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/HandGrabUseExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/HandOnHandInteraction.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/LocomotionExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/PanelWithManipulators.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/PokeExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/PoseExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/RayExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/SnapExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/TouchGrabExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/TransformerExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/UISetExamples.unity"
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/ShuaiAssets/GameTryScene.unity
   - m_enabled: 1
     m_path: Assets/ShuaiAssets/MultiMrTry.unity
-  - m_enabled: 1
-    m_path: Assets/ShuaiAssets/MultiMrTry 1.unity
+  - m_enabled: 0
+    m_path: Assets/ShuaiAssets/MultiMrTryExperimental.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -1068,7 +1068,13 @@ MonoBehaviour:
     - line: '|   windowsGamepadBackendHint: 0'
     - line: '|   cloudProjectId: '
     - line: '|   framebufferDepthMemorylessMode: 0'
-    - line: '|   qualitySettingsNames: []'
+    - line: '|   qualitySettingsNames:'
+    - line: '|   - Very Low'
+    - line: '|   - Low'
+    - line: '|   - Medium'
+    - line: '|   - High'
+    - line: '|   - Very High'
+    - line: '|   - Ultra'
     - line: '|   projectName: '
     - line: '|   organizationId: '
     - line: '|   cloudEnabled: 0'
