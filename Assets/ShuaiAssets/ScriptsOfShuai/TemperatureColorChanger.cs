@@ -1,19 +1,22 @@
 using UnityEngine;
-
 namespace CustomInteraction
 {
     public class TemperatureColorChanger : MonoBehaviour
     {
         [Header("Color Settings")]
-        public Material targetMaterial;      // 目标材质
-        public Color coldColor = Color.blue; // 低温颜色 (60°F)
-        public Color hotColor = Color.red;   // 高温颜色 (90°F)
+        public Material targetMaterial;
+        public Color coldColor = Color.blue;
+        public Color hotColor = Color.red;
+        private bool Firstadded = true;
+
+        [Header("Temperature Settings")]
+        [SerializeField] private float minTempThreshold = 69f;
+        [SerializeField] private float maxTempThreshold = 71f;
 
         private void Start()
         {
             if (targetMaterial == null)
             {
-                // 如果没有指定材质，尝试从当前对象获取
                 var renderer = GetComponent<Renderer>();
                 if (renderer != null)
                 {
@@ -26,7 +29,6 @@ namespace CustomInteraction
                 }
             }
 
-            // 获取温度控制器并订阅事件
             var tempController = GetComponent<TemperatureControllerTransformer>();
             if (tempController != null)
             {
@@ -40,14 +42,24 @@ namespace CustomInteraction
 
         private void UpdateColor(float temperature)
         {
-            // 将温度(90°F - 60°F)映射到颜色插值(0-1)
+            // 检查温度是否在 69-71 范围内
+            if (temperature >= minTempThreshold && temperature <= maxTempThreshold)
+            {
+                if (Firstadded)
+                {
+                    ScoreSystem.Instance.AddScore(1);
+                    Firstadded = false;
+                    Debug.Log($"Score added! Temperature: {temperature}");
+                }
+            }
+
+            // 颜色渐变计算
             float t = (temperature - 60f) / (90f - 60f);
             targetMaterial.color = Color.Lerp(coldColor, hotColor, t);
         }
 
         private void OnDestroy()
         {
-            // 清理事件订阅
             var tempController = GetComponent<TemperatureControllerTransformer>();
             if (tempController != null)
             {

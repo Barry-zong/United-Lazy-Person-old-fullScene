@@ -9,7 +9,7 @@ namespace CustomInteraction
         [Header("Display Settings")]
         [SerializeField]
         private TextMeshProUGUI temperatureText;    // 温度显示文本
-        private bool Firstadded = true;
+       
 
         [Header("Temperature Settings")]
         [SerializeField]
@@ -61,14 +61,7 @@ namespace CustomInteraction
 
             // 将0-90度的旋转映射到90-60华氏度（注意是反向映射）
             float newTemperature = Mathf.Lerp(_maxTemperature, _minTemperature, normalizedRotation / 90f);
-            if(newTemperature == 70)
-            {
-                if (Firstadded)
-                {
-                    ScoreSystem.Instance.AddScore(1);
-                    Firstadded = false;
-                }
-            }
+           
 
             // 如果温度发生变化，更新显示并触发事件
             if (Mathf.Abs(newTemperature - _currentTemperature) > 0.01f)

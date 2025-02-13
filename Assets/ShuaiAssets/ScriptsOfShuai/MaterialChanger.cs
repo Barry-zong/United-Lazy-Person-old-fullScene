@@ -5,6 +5,7 @@ public class MaterialChanger : MonoBehaviour
     public Material targetMaterial;
     private bool Firstadded = true;
     public Color triggerColor = Color.red;
+    public Color triggerColorS = Color.red;
 
     void Start()
     {
@@ -13,6 +14,7 @@ public class MaterialChanger : MonoBehaviour
         {
             Debug.LogWarning("没有设置目标材质!");
         }
+        targetMaterial.SetColor("_EmissionColor", triggerColorS);
     }
 
     private void OnTriggerEnter(Collider other)
