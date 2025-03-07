@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2bd8959f5fbd3644aa33af1a155fc147, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2123,9 +2123,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 65872667}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 65872671}
   m_SourcePrefab: {fileID: 100100000, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
 --- !u!4 &65872660 stripped
 Transform:
@@ -2198,6 +2195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 2124361029
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -2205,6 +2205,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &65872666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2230,6 +2232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &65872668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &65872669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,6 +2262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -2270,6 +2283,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &65872670
@@ -2294,36 +2308,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installMatchmaking
       _value: '{"value__":0}'
---- !u!114 &65872671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65872661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1001 &67666759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8235,9 +8219,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9014997533284787444, guid: c2b475e6a2727d343a24abef3f18ed38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 273907675}
-    - targetCorrespondingSourceObject: {fileID: 9014997533284787444, guid: c2b475e6a2727d343a24abef3f18ed38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 273907678}
   m_SourcePrefab: {fileID: 100100000, guid: c2b475e6a2727d343a24abef3f18ed38, type: 3}
 --- !u!4 &273907662 stripped
 Transform:
@@ -8310,6 +8291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 2013924569
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -8317,6 +8301,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &273907668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8342,6 +8328,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &273907670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8354,6 +8345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &273907671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8366,6 +8358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -8382,6 +8379,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &273907672
@@ -8418,6 +8416,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &273907676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8430,6 +8433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &273907677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8443,36 +8447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseGravity: 1
---- !u!114 &273907678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273907664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1 &275423569
 GameObject:
   m_ObjectHideFlags: 0
@@ -9009,6 +8983,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 638361381
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -9016,6 +8993,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &292018539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9041,6 +9020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &292018541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9053,6 +9037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &292018542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9065,6 +9050,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -9081,6 +9071,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &292018543
@@ -9117,6 +9108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -9133,6 +9129,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!1 &292397193
@@ -9432,9 +9429,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1281370341264063653, guid: 1f81c5e34ec6e2a4d929580353b65d1c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 298540766}
-    - targetCorrespondingSourceObject: {fileID: 1281370341264063653, guid: 1f81c5e34ec6e2a4d929580353b65d1c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 298540770}
   m_SourcePrefab: {fileID: 100100000, guid: 1f81c5e34ec6e2a4d929580353b65d1c, type: 3}
 --- !u!4 &298540759 stripped
 Transform:
@@ -9507,6 +9501,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 413658602
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -9514,6 +9511,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &298540765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9539,6 +9538,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &298540767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9551,6 +9555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &298540768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9563,6 +9568,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -9579,6 +9589,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &298540769
@@ -9603,36 +9614,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installMatchmaking
       _value: '{"value__":0}'
---- !u!114 &298540770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298540760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1 &298652351
 GameObject:
   m_ObjectHideFlags: 0
@@ -13899,6 +13880,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 1502803710
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -13906,6 +13890,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &420250431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13931,6 +13917,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &420250433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13943,6 +13934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &420250434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13955,6 +13947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -13971,6 +13968,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &420250435
@@ -14007,6 +14005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -14023,6 +14026,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!1 &420570083
@@ -28826,6 +28830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &851680229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28838,6 +28843,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!54 &851680230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32307,9 +32336,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 830089464817703621, guid: ab41bfc855d041341a958d39ef883800, type: 3}
       insertIndex: -1
       addedObject: {fileID: 950498187}
-    - targetCorrespondingSourceObject: {fileID: 830089464817703621, guid: ab41bfc855d041341a958d39ef883800, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 950498191}
   m_SourcePrefab: {fileID: 100100000, guid: ab41bfc855d041341a958d39ef883800, type: 3}
 --- !u!4 &950498180 stripped
 Transform:
@@ -32382,6 +32408,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 2356659701
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -32389,6 +32418,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &950498186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32414,6 +32445,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &950498188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32426,6 +32462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &950498189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32438,6 +32475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -32454,6 +32496,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &950498190
@@ -32478,36 +32521,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installMatchmaking
       _value: '{"value__":0}'
---- !u!114 &950498191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950498182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1001 &951231565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34747,6 +34760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 4212747382
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -34754,6 +34770,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &1018908202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34766,6 +34784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9b8de644b1c0c4ca6acf4c22ff66b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   scoreText: {fileID: 1843089602}
   scorePrefix: 
 --- !u!4 &1018908203
@@ -52070,9 +52089,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2924576743929901213, guid: c9233d544373f8d40a90bba7fb3aed09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1645827450}
-    - targetCorrespondingSourceObject: {fileID: 2924576743929901213, guid: c9233d544373f8d40a90bba7fb3aed09, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1645827454}
   m_SourcePrefab: {fileID: 100100000, guid: c9233d544373f8d40a90bba7fb3aed09, type: 3}
 --- !u!4 &1645827440 stripped
 Transform:
@@ -52119,6 +52135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 92500611
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -52126,6 +52145,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &1645827449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52151,6 +52172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &1645827451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52163,6 +52189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &1645827452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52175,6 +52202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -52191,6 +52223,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &1645827453
@@ -52215,36 +52248,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installMatchmaking
       _value: '{"value__":0}'
---- !u!114 &1645827454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95025985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1 &1647962001
 GameObject:
   m_ObjectHideFlags: 0
@@ -53508,9 +53511,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 84f81df3fcd60ad41be443c076d96cf5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1680247331}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 84f81df3fcd60ad41be443c076d96cf5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1680247335}
   m_SourcePrefab: {fileID: 100100000, guid: 84f81df3fcd60ad41be443c076d96cf5, type: 3}
 --- !u!1 &1680247324 stripped
 GameObject:
@@ -53583,6 +53583,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 4011988228
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -53590,6 +53593,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &1680247330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53615,6 +53620,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &1680247332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53627,6 +53637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &1680247333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53639,6 +53650,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -53655,6 +53671,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &1680247334
@@ -53679,36 +53696,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installMatchmaking
       _value: '{"value__":0}'
---- !u!114 &1680247335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680247324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1 &1681204168
 GameObject:
   m_ObjectHideFlags: 0
@@ -65167,6 +65154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 3773511884
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -65174,6 +65164,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &2020266969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65199,6 +65191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &2020266971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65211,6 +65208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &2020266972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65223,6 +65221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -65239,6 +65242,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &2020266973
@@ -65275,6 +65279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &2020266975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65300,6 +65305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -65316,6 +65326,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!1 &2021352691
@@ -67930,6 +67941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c591ff029c5744fab32050a9c97f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &2099594262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67942,6 +67954,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ed07ae7c26a141bac0d303d0a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &2099797242
 GameObject:
   m_ObjectHideFlags: 0
