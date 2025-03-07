@@ -60,6 +60,8 @@ MonoBehaviour:
     m_path: Assets/ShuaiAssets/MultiMrTry.unity
   - m_enabled: 0
     m_path: Assets/ShuaiAssets/MultiMrTryExperimental.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/UN_lazyPeopleMltiTestScene.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -1063,7 +1065,7 @@ MonoBehaviour:
     - line: '|   captureStartupLogs: {}'
     - line: '|   activeInputHandler: 1'
     - line: '|   windowsGamepadBackendHint: 0'
-    - line: '|   cloudProjectId: '
+    - line: '|   cloudProjectId: 93377047-d009-4c5b-8379-f3559597e40a'
     - line: '|   framebufferDepthMemorylessMode: 0'
     - line: '|   qualitySettingsNames:'
     - line: '|   - Very Low'
@@ -1072,8 +1074,8 @@ MonoBehaviour:
     - line: '|   - High'
     - line: '|   - Very High'
     - line: '|   - Ultra'
-    - line: '|   projectName: '
-    - line: '|   organizationId: '
+    - line: '|   projectName: United Lazy Person'
+    - line: '|   organizationId: zhangzonshuai'
     - line: '|   cloudEnabled: 0'
     - line: '|   legacyClampBlendShapeWeights: 0'
     - line: '|   hmiLoadingImage: {instanceID: 0}'
