@@ -55,13 +55,15 @@ MonoBehaviour:
   - m_enabled: 0
     m_path: "Assets/Samples/Meta XR Interaction \u200BSDK/72.0.0/Example Scenes/UISetExamples.unity"
   - m_enabled: 0
-    m_path: Assets/ShuaiAssets/GameTryScene.unity
-  - m_enabled: 1
+    m_path: Assets/ShuaiAssets/OldGameTryScene.unity
+  - m_enabled: 0
     m_path: Assets/ShuaiAssets/MultiMrTry.unity
   - m_enabled: 0
-    m_path: Assets/ShuaiAssets/MultiMrTryExperimental.unity
-  - m_enabled: 1
+    m_path: Assets/ShuaiAssets/TestMultiMrTryExperimental.unity
+  - m_enabled: 0
     m_path: Assets/Scenes/UN_lazyPeopleMltiTestScene.unity
+  - m_enabled: 1
+    m_path: Assets/ShuaiAssets/MultiMrTryBiggerPlace.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -209,6 +211,12 @@ MonoBehaviour:
     - line: '|   preloadedAssets:'
     - line: '|   - {instanceID: 0}'
     - line: '|   - {instanceID: 0}'
+    - line: '|   - {fileID: 11400000, guid: f1bf65a7041a4e341a62d3d05481acbe, type:
+        2}'
+    - line: '|   - {fileID: -8196854396901781169, guid: 1a4c68ca72a83449f938d669337cb305,
+        type: 2}'
+    - line: '|   - {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type:
+        2}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'

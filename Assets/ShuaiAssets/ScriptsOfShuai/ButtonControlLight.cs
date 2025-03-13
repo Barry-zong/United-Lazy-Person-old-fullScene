@@ -21,7 +21,9 @@ public class ButtonControlLight : MonoBehaviour
         Light.SetActive(false);
         if (Firstadded)
         {
-            ScoreSystem.Instance.AddScore(1);
+          //  Debug.Log("scoreadded");
+                
+           ScoreSystem.Instance.AddScore(1);
             Firstadded = false;
         }
     }
