@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class FaceCameraZ : MonoBehaviour
 {
-    [Tooltip("ĞèÒª³¯ÏòµÄÄ¿±êÉãÏñ»ú")]
+    [Tooltip("éœ€è¦é¢å‘çš„ç›®æ ‡ç›¸æœº")]
     public Transform targetCamera;
 
-    [Tooltip("ÊÇ·ñÔÚYÖáÉÏËø¶¨Ğı×ª£¨±£³Ö´¹Ö±£©")]
+    [Tooltip("æ˜¯å¦åœ¨Yè½´æ–¹å‘ä¿æŒå‚ç›´")]
     public bool lockYRotation = false;
 
-    [Tooltip("ÊÇ·ñ·´×ª³¯Ïò£¨À¶ÖáÎ²¶Ë³¯ÏòÉãÏñ»ú£©")]
+    [Tooltip("æ˜¯å¦åè½¬æœå‘ä½¿ç‰©ä½“å°¾éƒ¨æœå‘ç›¸æœº")]
     public bool invertFacing = true;
 
     void Start()
     {
-        // Èç¹ûÃ»ÓĞÖ¸¶¨ÉãÏñ»ú£¬Ä¬ÈÏÊ¹ÓÃÖ÷ÉãÏñ»ú
+        // å¦‚æœæ²¡æœ‰æŒ‡å®šç›®æ ‡ç›¸æœºï¼Œé»˜è®¤ä½¿ç”¨ä¸»ç›¸æœº
         if (targetCamera == null)
         {
             targetCamera = Camera.main.transform;
@@ -26,22 +26,22 @@ public class FaceCameraZ : MonoBehaviour
         {
             Vector3 directionToCamera = targetCamera.position - transform.position;
 
-            // Èç¹ûĞèÒªËø¶¨YÖáĞı×ª£¨Ö»ÔÚË®Æ½ÃæÉÏĞı×ª£©
+            // å¦‚æœéœ€è¦é”å®šYè½´æ—‹è½¬ï¼Œåªåœ¨æ°´å¹³é¢å†…æ—‹è½¬
             if (lockYRotation)
             {
                 directionToCamera.y = 0;
             }
 
-            // È·±£·½ÏòÏòÁ¿²»ÎªÁã
+            // ç¡®ä¿æ–¹å‘å‘é‡ä¸ä¸ºé›¶
             if (directionToCamera != Vector3.zero)
             {
-                // ·´×ª·½Ïò£¬Ê¹À¶ÖáÎ²¶Ë£¨¶ø·ÇÇ°¶Ë£©³¯ÏòÉãÏñ»ú
+                // åè½¬æ–¹å‘ä½¿ç‰©ä½“å°¾éƒ¨ï¼ˆè€Œä¸æ˜¯å‰ç«¯ï¼‰æœå‘ç›¸æœº
                 if (invertFacing)
                 {
                     directionToCamera = -directionToCamera;
                 }
 
-                // ÉèÖÃÎïÌåĞı×ª£¬Ê¹ZÖá¶Ô×¼ÉãÏñ»ú·½Ïò
+                // è®¡ç®—ç‰©ä½“æ—‹è½¬ä½¿Zè½´åŸºå‡†æœå‘ç›®æ ‡
                 transform.rotation = Quaternion.LookRotation(directionToCamera);
             }
         }

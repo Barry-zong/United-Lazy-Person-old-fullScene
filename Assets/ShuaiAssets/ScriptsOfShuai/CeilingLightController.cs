@@ -2,61 +2,61 @@ using UnityEngine;
 
 public class CeilingLightController : MonoBehaviour
 {
-    // ¶¥µÆÓÎÏ·ÎïÌåÒıÓÃ
+    // å¤©èŠ±æ¿ç¯æ¸¸æˆå¯¹è±¡
     public GameObject ceilingLight;
 
-    // ¼ÇÂ¼³õÊ¼Ğı×ªÖµ
+    // è®°å½•åˆå§‹æ—‹è½¬å€¼
     private Quaternion initialRotation;
 
-    // ÀäÈ´Ê±¼äÏà¹Ø±äÁ¿
+    // å†·å´æ—¶é—´ç›¸å…³å˜é‡
     private float cooldownTime = 1f;
     private float cooldownTimer = 0f;
 
-    // ¼ÇÂ¼ÉÏÒ»´Î¼ì²éÊ±µÄĞı×ªÖµ
+    // è®°å½•ä¸Šä¸€æ¬¡æ£€æµ‹æ—¶çš„æ—‹è½¬å€¼
     private float lastCheckedRotation;
 
-    // ×·×ÙÊÇ·ñÊÇµÚÒ»´ÎÇĞ»»×´Ì¬
+    // è¿½è¸ªæ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡åˆ‡æ¢çŠ¶æ€
     private bool isFirstSwitch = true;
 
     void Start()
     {
-        // È·±£ÒÑ¾­Ö¸¶¨¶¥µÆÎïÌå
+        // ç¡®ä¿å·²ç»æŒ‡å®šäº†å¤©èŠ±æ¿ç¯
         if (ceilingLight == null)
         {
-            Debug.LogError("ÇëÔÚInspectorÖĞÖ¸¶¨¶¥µÆÎïÌå£¡");
+            Debug.LogError("è¯·åœ¨Inspectorä¸­æŒ‡å®šå¤©èŠ±æ¿ç¯ï¼");
             enabled = false;
             return;
         }
 
-        // ¼ÇÂ¼³õÊ¼Ğı×ªÖµ
+        // è®°å½•åˆå§‹æ—‹è½¬å€¼
         initialRotation = transform.rotation;
         lastCheckedRotation = transform.rotation.eulerAngles.z;
     }
 
     void Update()
     {
-        // ¸üĞÂÀäÈ´¼ÆÊ±Æ÷
+        // æ›´æ–°å†·å´æ—¶é—´
         cooldownTimer -= Time.deltaTime;
 
-        // Èç¹û»¹ÔÚÀäÈ´ÖĞ£¬Ö±½Ó·µ»Ø
+        // å¦‚æœåœ¨å†·å´ä¸­ï¼Œç›´æ¥è¿”å›
         if (cooldownTimer > 0)
         {
             return;
         }
 
-        // »ñÈ¡µ±Ç°ZÖáĞı×ªÖµ
+        // è·å–å½“å‰Zè½´æ—‹è½¬å€¼
         float currentRotationZ = transform.rotation.eulerAngles.z;
 
-        // ¼ÆËãÓëÉÏ´Î¼ì²éÊ±µÄĞı×ª²îÖµ
+        // è®¡ç®—ä¸ä¸Šä¸€æ¬¡æ£€æµ‹æ—¶çš„æ—‹è½¬å·®å€¼
         float rotationDelta = Mathf.Abs(currentRotationZ - lastCheckedRotation);
 
-        // Èç¹ûĞı×ª²îÖµ³¬¹ı50¶È
+        // å¦‚æœæ—‹è½¬å·®å€¼å¤§äº50åº¦
         if (rotationDelta > 50f)
         {
-            // ÇĞ»»¶¥µÆ×´Ì¬
+            // åˆ‡æ¢ç¯å…‰çŠ¶æ€
             ceilingLight.SetActive(!ceilingLight.activeSelf);
 
-            // ¼ì²éÊÇ·ñÊÇµÚÒ»´ÎÇĞ»»
+            // æ£€æŸ¥æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡åˆ‡æ¢
             if (isFirstSwitch)
             {
                 Debug.Log("light off add point");
@@ -67,13 +67,13 @@ public class CeilingLightController : MonoBehaviour
             }
             else
             {
-                Debug.Log($"¼ì²âµ½Ğı×ª±ä»¯{rotationDelta}¶È£¬ÇĞ»»¶¥µÆ×´Ì¬Îª: {ceilingLight.activeSelf}");
+                Debug.Log($"æ£€æµ‹åˆ°æ—‹è½¬å˜åŒ–{rotationDelta}åº¦ï¼Œåˆ‡æ¢ç¯å…‰çŠ¶æ€ä¸º: {ceilingLight.activeSelf}");
             }
 
-            // ÖØÖÃÀäÈ´Ê±¼ä
+            // é‡ç½®å†·å´æ—¶é—´
             cooldownTimer = cooldownTime;
 
-            // ¸üĞÂÉÏ´Î¼ì²éµÄĞı×ªÖµ
+            // æ›´æ–°ä¸Šä¸€æ¬¡æ£€æµ‹çš„æ—‹è½¬å€¼
             lastCheckedRotation = currentRotationZ;
         }
     }

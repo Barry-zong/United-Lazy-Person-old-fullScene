@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 public class FoodDetector : MonoBehaviour
 {
-    // ÓÃHashSetÀ´¼ÇÂ¼ÒÑ¾­´¥·¢¹ıµÄÎïÌå£¬È·±£Ã¿¸öÎïÌåÖ»´¥·¢Ò»´Î
+    // ä½¿ç”¨HashSetè®°å½•å·²ç»æ£€æµ‹è¿‡çš„ç‰©ä½“ï¼Œç¡®ä¿æ¯ä¸ªç‰©ä½“åªè¢«æ£€æµ‹ä¸€æ¬¡
     private HashSet<GameObject> detectedFood = new HashSet<GameObject>();
 
     private void OnTriggerEnter(Collider other)
     {
-        // ¼ì²é½øÈëµÄÎïÌåÊÇ·ñ´øÓĞ"Food"±êÇ©£¬ÇÒÖ®Ç°Ã»ÓĞ±»¼ì²â¹ı
+        // æ£€æŸ¥ç¢°æ’ç‰©ä½“æ˜¯å¦å¸¦æœ‰"Food"æ ‡ç­¾ï¼Œä¸”ä¹‹å‰æ²¡æœ‰è¢«æ£€æµ‹è¿‡
         if (other.CompareTag("Food") && !detectedFood.Contains(other.gameObject))
         {
-            // ½«ÎïÌåÌí¼Óµ½ÒÑ¼ì²â¼¯ºÏÖĞ
+            // å°†ç‰©ä½“æ·»åŠ åˆ°å·²æ£€æµ‹é›†åˆä¸­
             detectedFood.Add(other.gameObject);
             ScoreSystem.Instance.AddScore(1);
-            // Êä³öÈÕÖ¾
+            // è¾“å‡ºæ ‡å¿—
             Debug.Log("trash point added");
         }
     }

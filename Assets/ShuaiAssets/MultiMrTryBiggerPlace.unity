@@ -26160,6 +26160,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2921817417469072456, guid: 9b07121987b263d48a9435f59424b513, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d4865cdd34d58b4f957419fbd703b07, type: 2}
     - target: {fileID: 8423745639719101889, guid: 9b07121987b263d48a9435f59424b513, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -40735,7 +40739,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881280303}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -105444,6 +105448,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4330298490487879922}
     m_Modifications:
+    - target: {fileID: 1776430653511646346, guid: db86de11e5853514794bfadbcaf07546, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d6f8eef91e5466845bde64d08eef3830, type: 2}
     - target: {fileID: 4978232777106006392, guid: db86de11e5853514794bfadbcaf07546, type: 3}
       propertyPath: m_Name
       value: Plant

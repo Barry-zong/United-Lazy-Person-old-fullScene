@@ -5,19 +5,19 @@ using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
-    [Header("��ʱ������")]
-    [Tooltip("����ʱ��ʱ�䣨�룩")]
+    [Header("计时器设置")]
+    [Tooltip("设置计时总时间（秒）")]
     public float totalTime = 60f;
 
-    [Tooltip("�Ƿ��ڵ���ʱ����ʱ��ͣ��Ϸ")]
+    [Tooltip("是否在倒计时结束时暂停游戏")]
     public bool pauseGameWhenFinished = false;
 
-    [Header("UI����")]
-    [Tooltip("������ʾ����ʱ��TextMeshPro���")]
+    [Header("UI设置")]
+    [Tooltip("用于显示倒计时的TextMeshPro组件")]
     public TMP_Text countdownText;
 
-    [Header("��Ƶ����")]
-    [Tooltip("����ʱ����ʱ��Ҫ�رյ�����Դ")]
+    [Header("音频设置")]
+    [Tooltip("倒计时结束时需要关闭的音频源")]
     public AudioSource musicToStop;
 
     private float timeRemaining;
@@ -25,7 +25,7 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
-        // ��ʼ������ʱ
+        // 初始化倒计时
         timeRemaining = totalTime;
         UpdateTimerDisplay();
         StartTimer();
@@ -37,75 +37,75 @@ public class CountdownTimer : MonoBehaviour
         {
             if (timeRemaining > 0)
             {
-                // ÿ֡����ʱ��
+                // 每帧减少时间
                 timeRemaining -= Time.deltaTime;
 
-                // ȷ��ʱ�䲻���Ϊ����
+                // 确保时间不会变为负数
                 if (timeRemaining < 0)
                 {
                     timeRemaining = 0;
                     TimerFinished();
                 }
 
-                // ����UI��ʾ
+                // 更新UI显示
                 UpdateTimerDisplay();
             }
         }
     }
 
-    // ��ʼ��ʱ��
+    // 开始计时器
     public void StartTimer()
     {
         isRunning = true;
     }
 
-    // ��ͣ��ʱ��
+    // 暂停计时器
     public void PauseTimer()
     {
         isRunning = false;
     }
 
-    // ���ü�ʱ��
+    // 重置计时器
     public void ResetTimer()
     {
         timeRemaining = totalTime;
         UpdateTimerDisplay();
     }
 
-    // ����UI��ʾ
+    // 更新UI显示
     private void UpdateTimerDisplay()
     {
         if (countdownText != null)
         {
-            // ��ʣ��ʱ��ת��Ϊ��:���ʽ
+            // 将剩余时间转换为分:秒格式
             int minutes = Mathf.FloorToInt(timeRemaining / 60f);
             int seconds = Mathf.FloorToInt(timeRemaining % 60f);
 
-            // �����ı���ʾ
+            // 更新文本显示
             countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
 
-    // ��ʱ������ʱ����
+    // 计时器结束时调用
     private void TimerFinished()
     {
         isRunning = false;
 
-        // �����������ͣѡ�����ͣ��Ϸ
+        // 如果设置了暂停选项，则暂停游戏
         if (pauseGameWhenFinished)
         {
             Time.timeScale = 0f;
-            Debug.Log("����ʱ��������Ϸ����ͣ");
+            Debug.Log("倒计时结束，游戏已暂停");
         }
 
-        // �ر�ָ��������
+        // 关闭指定音频
         if (musicToStop != null)
         {
             musicToStop.Stop();
-            Debug.Log("������ֹͣ����");
+            Debug.Log("音乐已停止播放");
         }
 
-        // �������������������ʱ����ʱ��Ҫִ�е��߼�
-        Debug.Log("����ʱ����");
+        // 在这里添加倒计时结束时需要执行的逻辑
+        Debug.Log("倒计时结束");
     }
 }

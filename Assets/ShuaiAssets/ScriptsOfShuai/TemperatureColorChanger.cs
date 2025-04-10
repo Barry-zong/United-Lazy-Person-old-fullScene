@@ -42,7 +42,7 @@ namespace CustomInteraction
 
         private void UpdateColor(float temperature)
         {
-            // ¼ì²éÎÂ¶ÈÊÇ·ñÔÚ 69-71 ·¶Î§ÄÚ
+            // æ£€æŸ¥æ¸©åº¦æ˜¯å¦åœ¨ 69-71 èŒƒå›´å†…
             if (temperature >= minTempThreshold && temperature <= maxTempThreshold)
             {
                 if (Firstadded)
@@ -53,7 +53,7 @@ namespace CustomInteraction
                 }
             }
 
-            // ÑÕÉ«½¥±ä¼ÆËã
+            // é¢œè‰²æ’å€¼è®¡ç®—
             float t = (temperature - 60f) / (90f - 60f);
             targetMaterial.color = Color.Lerp(coldColor, hotColor, t);
         }

@@ -9,10 +9,10 @@ public class MaterialChanger : MonoBehaviour
 
     void Start()
     {
-        // È·±£²ÄÖÊÒÑÉèÖÃ
+        // ç¡®ä¿æè´¨å­˜åœ¨
         if (targetMaterial == null)
         {
-            Debug.LogWarning("Ã»ÓĞÉèÖÃÄ¿±ê²ÄÖÊ!");
+            Debug.LogWarning("æ²¡æœ‰è®¾ç½®ç›®æ ‡æè´¨!");
         }
         targetMaterial.SetColor("_EmissionColor", triggerColorS);
     }
@@ -21,9 +21,9 @@ public class MaterialChanger : MonoBehaviour
     {
         if (targetMaterial != null)
         {
-            // ĞŞ¸Ä²ÄÖÊµÄ×Ô·¢¹âÑÕÉ«
+            // ä¿®æ”¹æè´¨çš„å‘å…‰é¢œè‰²
             targetMaterial.SetColor("_EmissionColor", triggerColor);
-            // È·±£×Ô·¢¹âÊÇÆôÓÃµÄ
+            // ç¡®ä¿å‘å…‰æ•ˆæœè¢«å¯ç”¨
             targetMaterial.EnableKeyword("_EMISSION");
 
             if (Firstadded)

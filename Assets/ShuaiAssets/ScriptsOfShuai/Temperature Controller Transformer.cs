@@ -8,39 +8,39 @@ namespace CustomInteraction
     {
         [Header("Display Settings")]
         [SerializeField]
-        private TextMeshProUGUI temperatureText;    // ÎÂ¶ÈÏÔÊ¾ÎÄ±¾
+        private TextMeshProUGUI temperatureText;    // æ¸©åº¦æ˜¾ç¤ºæ–‡æœ¬
        
 
         [Header("Temperature Settings")]
         [SerializeField]
-        private float _maxTemperature = 90f;        // ×î¸ßÎÂ¶È£¨»ªÊÏ¶È£©
+        private float _maxTemperature = 90f;        // æœ€é«˜æ¸©åº¦ï¼ˆåæ°åº¦ï¼‰
         [SerializeField]
-        private float _minTemperature = 60f;        // ×îµÍÎÂ¶È£¨»ªÊÏ¶È£©
+        private float _minTemperature = 60f;        // æœ€ä½æ¸©åº¦ï¼ˆåæ°åº¦ï¼‰
 
-        // ÎÂ¶È¸Ä±äÊ±µÄÊÂ¼ş
+        // æ¸©åº¦æ”¹å˜æ—¶çš„äº‹ä»¶
         public UnityEvent<float> OnTemperatureChanged;
 
-        private float _initialZRotation;            // ³õÊ¼ZÖáĞı×ªÖµ
-        private float _currentTemperature;          // µ±Ç°ÎÂ¶È
+        private float _initialZRotation;            // åˆå§‹Zè½´æ—‹è½¬å€¼
+        private float _currentTemperature;          // å½“å‰æ¸©åº¦
 
         private void Start()
         {
-            // ³õÊ¼»¯ÊÂ¼ş
+            // åˆå§‹åŒ–äº‹ä»¶
             if (OnTemperatureChanged == null)
             {
                 OnTemperatureChanged = new UnityEvent<float>();
             }
 
-            // ¼ÇÂ¼³õÊ¼Ğı×ªÖµ
+            // è®°å½•åˆå§‹æ—‹è½¬å€¼
             _initialZRotation = transform.localEulerAngles.z;
 
-            // È·±£ÓĞÎÂ¶ÈÏÔÊ¾ÎÄ±¾×é¼ş
+            // ç¡®ä¿æ¸©åº¦æ˜¾ç¤ºæ–‡æœ¬å­˜åœ¨
             if (temperatureText == null)
             {
                 Debug.LogError("Temperature Text component is not assigned!");
             }
 
-            // ³õÊ¼»¯ÎÂ¶ÈÏÔÊ¾
+            // åˆå§‹åŒ–æ¸©åº¦æ˜¾ç¤º
             UpdateTemperatureFromRotation();
         }
 
@@ -49,21 +49,21 @@ namespace CustomInteraction
             UpdateTemperatureFromRotation();
         }
 
-        // ¸ù¾İĞı×ª¸üĞÂÎÂ¶È
+        // æ ¹æ®æ—‹è½¬æ›´æ–°æ¸©åº¦
         private void UpdateTemperatureFromRotation()
         {
-            // »ñÈ¡µ±Ç°ZÖáĞı×ª
+            // è·å–å½“å‰Zè½´æ—‹è½¬
             float currentZRotation = transform.localEulerAngles.z;
 
-            // ¼ÆËãÏà¶ÔÓÚ³õÊ¼Î»ÖÃµÄĞı×ª²îÖµ£¨È·±£ÔÚ0-90¶È·¶Î§ÄÚ£©
+            // è®¡ç®—ç›¸å¯¹äºåˆå§‹ä½ç½®çš„æ—‹è½¬å€¼ï¼Œç¡®ä¿åœ¨0-90åº¦èŒƒå›´å†…
             float rotationDelta = Mathf.DeltaAngle(currentZRotation, _initialZRotation);
             float normalizedRotation = Mathf.Clamp(rotationDelta, 0f, 90f);
 
-            // ½«0-90¶ÈµÄĞı×ªÓ³Éäµ½90-60»ªÊÏ¶È£¨×¢ÒâÊÇ·´ÏòÓ³Éä£©
+            // å°†0-90åº¦çš„æ—‹è½¬æ˜ å°„åˆ°90-60åæ°åº¦ï¼Œæ³¨æ„æ˜¯åå‘æ˜ å°„
             float newTemperature = Mathf.Lerp(_maxTemperature, _minTemperature, normalizedRotation / 90f);
            
 
-            // Èç¹ûÎÂ¶È·¢Éú±ä»¯£¬¸üĞÂÏÔÊ¾²¢´¥·¢ÊÂ¼ş
+            // å½“æ¸©åº¦å‘ç”Ÿæ˜¾è‘—å˜åŒ–æ—¶ï¼Œæ›´æ–°æ˜¾ç¤ºå¹¶è§¦å‘äº‹ä»¶
             if (Mathf.Abs(newTemperature - _currentTemperature) > 0.01f)
             {
                 _currentTemperature = newTemperature;
@@ -72,22 +72,22 @@ namespace CustomInteraction
             }
         }
 
-        // ¸üĞÂÎÂ¶ÈÏÔÊ¾
+        // æ›´æ–°æ¸©åº¦æ˜¾ç¤º
         private void UpdateTemperatureDisplay()
         {
             if (temperatureText != null)
             {
-                temperatureText.text = $"{_currentTemperature:F1}¡ãF";
+                temperatureText.text = $"{_currentTemperature:F1}Â°F";
             }
         }
 
-        // »ñÈ¡µ±Ç°ÎÂ¶È
+        // è·å–å½“å‰æ¸©åº¦
         public float GetCurrentTemperature()
         {
             return _currentTemperature;
         }
 
-        // »ñÈ¡ÉãÊÏ¶ÈÖµ
+        // è·å–æ‘„æ°åº¦å€¼
         public float GetTemperatureCelsius()
         {
             return (_currentTemperature - 32f) * 5f / 9f;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+
 public class ScoreSystem : MonoBehaviour
 {
     [Header("UI References")]
@@ -9,17 +10,17 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField] private string scorePrefix = "Score: ";
 
     [Header("Audio Settings")]
-    [SerializeField] private AudioSource scoreAudioSource; // ĞÂÔöÒôÆµÔ´ÒıÓÃ
+    [SerializeField] private AudioSource scoreAudioSource; // éŸ³é¢‘æºç»„ä»¶
 
-    // ±¾µØ·ÖÊı±äÁ¿£¬²»ÔÙÊ¹ÓÃNetworkVariable
+    // åˆ†æ•°å˜é‡ï¼Œåç»­ä¼šä½¿ç”¨NetworkVariable
     private int currentScore = 0;
 
-    // µ¥ÀıÄ£Ê½£¬·½±ãÆäËû½Å±¾·ÃÎÊ
+    // å•ä¾‹æ¨¡å¼ï¼Œä½¿å…¶ä»–è„šæœ¬å¯ä»¥è®¿é—®
     public static ScoreSystem Instance { get; private set; }
 
     private void Awake()
     {
-        // ÉèÖÃµ¥Àı
+        // è®¾ç½®å•ä¾‹
         if (Instance == null)
         {
             Instance = this;
@@ -33,68 +34,68 @@ public class ScoreSystem : MonoBehaviour
 
     private void Start()
     {
-        // È·±£ÓĞÒıÓÃµ½TextMeshPro×é¼ş
+        // ç¡®ä¿è®¾ç½®äº†TextMeshProç»„ä»¶
         if (scoreText == null)
         {
             Debug.LogError("ScoreSystem: No TextMeshProUGUI reference set!");
             return;
         }
 
-        // È·±£ÓĞÒıÓÃµ½AudioSource×é¼ş
+        // ç¡®ä¿è®¾ç½®äº†AudioSourceç»„ä»¶
         if (scoreAudioSource == null)
         {
             Debug.LogWarning("ScoreSystem: No AudioSource reference set! Score sounds will not play.");
         }
 
-        // ³õÊ¼»¯ÏÔÊ¾
+        // åˆå§‹åŒ–æ˜¾ç¤º
         UpdateScoreDisplay(currentScore);
     }
 
-    // ¹©Íâ²¿µ÷ÓÃµÄ¼Ó·Ö·½·¨
+    // ä¾›å¤–éƒ¨è°ƒç”¨çš„åŠ åˆ†æ–¹æ³•
     public void AddScore(int amount)
     {
-        // ¼ÇÂ¼¾É·ÖÊı
+        // è®°å½•æ—§åˆ†æ•°
         int oldScore = currentScore;
 
-        // Ö±½ÓÔÚ±¾µØĞŞ¸Ä·ÖÊı
+        // ç›´æ¥åœ¨æœ¬æœºä¿®æ”¹åˆ†æ•°
         currentScore += amount;
 
-        // Ö»ÓĞÔÚ·ÖÊıÕæÕıÔö¼ÓÊ±²Å²¥·ÅÒôĞ§
+        // åªæœ‰åœ¨åˆ†æ•°å¢åŠ æ—¶æ‰æ’­æ”¾éŸ³æ•ˆ
         if (currentScore > oldScore)
         {
             PlayScoreSound();
         }
 
-        // ¸üĞÂÏÔÊ¾
+        // æ›´æ–°æ˜¾ç¤º
         UpdateScoreDisplay(currentScore);
     }
 
-    // ¹©Íâ²¿µ÷ÓÃµÄÉèÖÃ·ÖÊı·½·¨
+    // ä¾›å¤–éƒ¨è°ƒç”¨çš„è®¾ç½®åˆ†æ•°æ–¹æ³•
     public void SetScore(int newScore)
     {
-        // ¼ÇÂ¼¾É·ÖÊı
+        // è®°å½•æ—§åˆ†æ•°
         int oldScore = currentScore;
 
-        // Ö±½ÓÔÚ±¾µØÉèÖÃ·ÖÊı
+        // ç›´æ¥åœ¨æœ¬æœºè®¾ç½®åˆ†æ•°
         currentScore = newScore;
 
-        // Ö»ÓĞÔÚ·ÖÊıÕæÕıÔö¼ÓÊ±²Å²¥·ÅÒôĞ§
+        // åªæœ‰åœ¨åˆ†æ•°å¢åŠ æ—¶æ‰æ’­æ”¾éŸ³æ•ˆ
         if (currentScore > oldScore)
         {
             PlayScoreSound();
         }
 
-        // ¸üĞÂÏÔÊ¾
+        // æ›´æ–°æ˜¾ç¤º
         UpdateScoreDisplay(currentScore);
     }
 
-    // »ñÈ¡µ±Ç°·ÖÊı
+    // è·å–å½“å‰åˆ†æ•°
     public int GetCurrentScore()
     {
         return currentScore;
     }
 
-    // ¸üĞÂUIÏÔÊ¾
+    // æ›´æ–°UIæ˜¾ç¤º
     private void UpdateScoreDisplay(int score)
     {
         if (scoreText != null)
@@ -103,7 +104,7 @@ public class ScoreSystem : MonoBehaviour
         }
     }
 
-    // ²¥·ÅµÃ·ÖÒôĞ§
+    // æ’­æ”¾å¾—åˆ†éŸ³æ•ˆ
     private void PlayScoreSound()
     {
         if (scoreAudioSource != null && scoreAudioSource.clip != null)

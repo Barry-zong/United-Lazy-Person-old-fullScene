@@ -5,10 +5,10 @@ public class AutoHostStarter : MonoBehaviour
 {
     void Start()
     {
-        // µ±³¡¾°¼ÓÔØÍê³Éºó×Ô¶¯Æô¶¯ host
+        // æ¸¸æˆå¯åŠ¨åè‡ªåŠ¨å¯åŠ¨ host
         NetworkManager.Singleton.StartHost();
 
-        // ¿ÉÑ¡£ºÌí¼ÓÈÕÖ¾À´È·ÈÏÆô¶¯×´Ì¬
-        Debug.Log("ÕıÔÚÆô¶¯ Host...");
+        // å¯é€‰ï¼šæ·»åŠ æ—¥å¿—ä»¥ç¡®è®¤å¯åŠ¨çŠ¶æ€
+        Debug.Log("æ­£åœ¨å¯åŠ¨ Host...");
     }
 }
