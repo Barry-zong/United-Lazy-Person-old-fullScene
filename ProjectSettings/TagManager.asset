@@ -7,6 +7,9 @@ TagManager:
   - Anchor
   - Food
   - Hand
+  - LandFill
+  - Recyclables
+  - Compost
   layers:
   - Default
   - TransparentFX

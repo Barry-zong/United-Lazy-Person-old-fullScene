@@ -16,7 +16,7 @@ MonoBehaviour:
   master:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 4
+      <length>k__BackingField: 2
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -28,24 +28,6 @@ MonoBehaviour:
           value: 0
           inSlope: 1
           outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.21259843
-          value: 0.22222221
-          inSlope: 1.1226946
-          outSlope: 1.1226946
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.8307087
-          value: 0.7777778
-          inSlope: 0.8801222
-          outSlope: 0.8801222
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -231,7 +213,7 @@ MonoBehaviour:
     m_Value: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.724
+    m_Value: 0.7
   clamp:
     m_OverrideState: 1
     m_Value: 65472
@@ -343,7 +325,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.224
+    m_Value: 0
   smoothness:
     m_OverrideState: 1
     m_Value: 0.2
