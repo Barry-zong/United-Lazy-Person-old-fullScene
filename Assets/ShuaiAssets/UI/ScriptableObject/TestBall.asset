@@ -15,5 +15,5 @@ MonoBehaviour:
   grabable: 1
   Name: Ball
   level: 2
-  hint: grab it
-  explantion: haoye
+  hint: ' Grab it and throw into a bin.'
+  explantion: 'Explanation for the specific part of SDG Goal. '
