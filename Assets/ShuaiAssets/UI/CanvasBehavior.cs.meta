@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: e0c5751b425bc4842b7eaffaf51988c8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - background: {instanceID: 0}
+  - infoPanel: {instanceID: 0}
+  - completePanel: {instanceID: 0}
+  - objectName: {instanceID: 0}
+  - hint: {instanceID: 0}
+  - explanation: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

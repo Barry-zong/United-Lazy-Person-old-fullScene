@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 添加树叶生长控制器引用
+using TreeGrowingAssets.Scripts;
+
 /**
  * @author Ciphered <https://ciphered.xyz
  * 
@@ -51,6 +54,26 @@ public class Generator : MonoBehaviour {
 	public float _killRange = 0.5f;
 	[Range(0f, 0.2f)]
 	public float _randomGrowth = 0.1f;
+	[Tooltip("是否使用随机种子")]
+	public bool _useRandomSeed = false;
+	[Tooltip("随机种子，相同的种子会产生相同的树形")]
+	public int _randomSeed = 0;
+
+	[Header("生长控制")]
+	[Tooltip("是否暂停生长")]
+	public bool _pauseGrowth = false;
+
+	[Header("树叶设置")]
+	[Tooltip("树叶预制体数组，最多4个")]
+	public GameObject[] _leafPrefabs = new GameObject[4]; // 树叶预制体数组
+	[Range(0f, 1f)]
+	public float _leafSpawnProbability = 0.3f; // 生成树叶的概率
+	[Range(0f, 2f)]
+	public float _leafSize = 0.1f; // 树叶基础大小
+	[Range(0f, 55f)]
+	public float _leafRotationRandomness = 0.2f; // 树叶旋转随机度
+	[Range(0, 10)]
+	public int _minDistanceFromRootForLeaves = 3; // 距离根节点最小距离才开始生成树叶
 
 	[Header("Mesh generation")]
 	[Range(0, 20)]
@@ -116,8 +139,9 @@ public class Generator : MonoBehaviour {
 	 * Returns a 3D random vector of _randomGrowth magniture 
 	 **/
 	Vector3 RandomGrowthVector () {
-		float alpha = Random.Range(0f, Mathf.PI);
-		float theta = Random.Range(0f, Mathf.PI*2f);
+		// 使用分支的ID和距离根节点的距离来生成固定的随机值
+		float alpha = Mathf.PerlinNoise(_timeSinceLastIteration * 0.1f, _branches.Count * 0.1f) * Mathf.PI;
+		float theta = Mathf.PerlinNoise(_branches.Count * 0.1f, _timeSinceLastIteration * 0.1f) * Mathf.PI * 2f;
 
 		Vector3 pt = new Vector3(
 			Mathf.Cos(theta) * Mathf.Sin(alpha),
@@ -130,6 +154,13 @@ public class Generator : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start () {
+		// 根据设置决定是否使用随机种子
+		if (_useRandomSeed) {
+			Random.InitState(_randomSeed);
+		} else {
+			Random.InitState(System.Environment.TickCount);
+		}
+		
 		GenerateAttractors(_nbAttractors, _radius);
 
 		_filter = GetComponent<MeshFilter>();
@@ -138,124 +169,77 @@ public class Generator : MonoBehaviour {
 		_firstBranch = new Branch(_startPosition, _startPosition + new Vector3(0, _branchLength, 0), new Vector3(0, 1, 0));
 		_branches.Add(_firstBranch);
 		_extremities.Add(_firstBranch);
-  }
+	}
 
   // Update is called once per frame
   void Update () {
-		_timeSinceLastIteration+= Time.deltaTime;
-
-		// we check if we need to run a new iteration 
-		if (_timeSinceLastIteration > _timeBetweenIterations) {
-			_timeSinceLastIteration = 0f;
-
-			// we parse the extremities to set them as grown 
-			foreach (Branch b in _extremities) {
-				b._grown = true;
+		// 自动生长模式
+		if (!_pauseGrowth) {
+			_timeSinceLastIteration += Time.deltaTime;
+			if (_timeSinceLastIteration > _timeBetweenIterations) {
+				_timeSinceLastIteration = 0f;
+				GrowOneStep();
 			}
+		}
+	}
 
-			// we remove the attractors in kill range
-			for (int i = _attractors.Count-1; i >= 0; i--) {
-				foreach (Branch b in _branches) {
-					if (Vector3.Distance(b._end, _attractors[i]) < _killRange) {
-						_attractors.Remove(_attractors[i]);
-						_nbAttractors--;
-						break;
-					}
-				}
-			}
+	/**
+	 * 执行一次生长步骤
+	 **/
+	void GrowOneStep() {
+		// 标记已生长的末端
+		foreach (Branch b in _extremities) {
+			b._grown = true;
+		}
 
-			if (_attractors.Count > 0) {
-				// we clear the active attractors
-				_activeAttractors.Clear();
-				foreach (Branch b in _branches) {
-					b._attractors.Clear();
-				}
-
-				// each attractor is associated to its closest branch, if in attraction range
-				int ia = 0;
-				foreach (Vector3 attractor in _attractors) {
-					float min = 999999f;
-					Branch closest = null; // will store the closest branch
-					foreach (Branch b in _branches) {
-						float d = Vector3.Distance(b._end, attractor);
-						if (d < _attractionRange && d < min) {
-							min = d;
-							closest = b;
-						}
-					}
-
-					// if a branch has been found, we add the attractor to the branch
-					if (closest != null) {
-						closest._attractors.Add(attractor);
-						_activeAttractors.Add(ia);
-					}
-
-					ia++;
-				}
-
-				// if at least an attraction point has been found, we want our tree to grow towards it
-				if (_activeAttractors.Count != 0) {
-					// because new extremities will be set here, we clear the current ones
-					_extremities.Clear();
-
-					// new branches will be added here
-					List<Branch> newBranches = new List<Branch>();
-
-					foreach (Branch b in _branches) {
-						// if the branch has attraction points, we grow towards them
-						if (b._attractors.Count > 0) {
-							// we compute the direction of the new branch
-							Vector3 dir = new Vector3(0, 0, 0);
-							foreach (Vector3 attr in b._attractors) {
-								dir+= (attr - b._end).normalized;
-							}
-							dir/= b._attractors.Count;
-							// random growth
-							dir+= RandomGrowthVector();
-							dir.Normalize();
-
-							// our new branch grows in the correct direction
-							Branch nb = new Branch(b._end, b._end + dir * _branchLength, dir, b);
-							nb._distanceFromRoot = b._distanceFromRoot+1;
-							b._children.Add(nb);
-							newBranches.Add(nb);
-							_extremities.Add(nb);
-						} else {
-							// if no attraction points, we only check if the branch is an extremity
-							if (b._children.Count == 0) {
-								_extremities.Add(b);
-							}
-						}
-					}
-
-					// we merge the new branches with the previous ones
-					_branches.AddRange(newBranches);
-				} else {
-					// we grow the extremities of the tree
-					for (int i = 0; i < _extremities.Count; i++) {
-						Branch e = _extremities[i];
-						// the new branch starts where the extremity ends
-						Vector3 start = e._end;
-						// we add randomness to the direction
-						Vector3 dir = e._direction + RandomGrowthVector();
-						// we add the direction multiplied by the branch length to get the end point
-						Vector3 end = e._end + dir * _branchLength;
-						// a new branch can be created with the same direction as its parent
-						Branch nb = new Branch(start, end, dir, e);
-
-						// the current extrimity has a new child
-						e._children.Add(nb);
-
-						// let's add the new branch to the list and set it as the new extremity 
-						_branches.Add(nb);
-						_extremities[i] = nb;
-					}
+		// 移除近距离吸引点
+		for (int i = _attractors.Count-1; i >= 0; i--) {
+			foreach (Branch b in _branches) {
+				if (Vector3.Distance(b._end, _attractors[i]) < _killRange) {
+					_attractors.Remove(_attractors[i]);
+					_nbAttractors--;
+					break;
 				}
 			}
 		}
 
+		if (_attractors.Count > 0) {
+			// 分配吸引点到分支
+			AssignAttractorsToBranches();
+			
+			// 生成新分支
+			if (_activeAttractors.Count != 0) {
+				GenerateNewBranches();
+			} else {
+				GrowExtremities();
+			}
+		}
+
 		ToMesh();
-  }
+	}
+
+	/**
+	 * 重置树
+	 **/
+	public void ResetTree() {
+		// 清除现有数据
+		_attractors.Clear();
+		_activeAttractors.Clear();
+		_branches.Clear();
+		_extremities.Clear();
+		_timeSinceLastIteration = 0f;
+
+		// 重新生成吸引点
+		GenerateAttractors(_nbAttractors, _radius);
+
+		// 重新生成第一个分支
+		_firstBranch = new Branch(_startPosition, _startPosition + new Vector3(0, _branchLength, 0), new Vector3(0, 1, 0));
+		_branches.Add(_firstBranch);
+		_extremities.Add(_firstBranch);
+
+		// 更新网格
+		ToMesh();
+	}
 
 	/**
 	 * Creates a mesh from the branches list
@@ -382,6 +366,123 @@ public class Generator : MonoBehaviour {
 			Gizmos.color = Color.magenta;
 			Gizmos.DrawSphere(b._end, 0.05f);
 			Gizmos.DrawSphere(b._start, 0.05f);
+		}
+	}
+
+	/**
+	 * 在分支上生成树叶
+	 **/
+	void SpawnLeaf(Branch branch) {
+		if (_leafPrefabs == null || _leafPrefabs.Length == 0) return;
+		if (branch._distanceFromRoot < _minDistanceFromRootForLeaves) return;
+		
+		// 使用Perlin噪声生成固定的随机值
+		float randomValue = Mathf.PerlinNoise(branch._distanceFromRoot * 0.1f, _branches.Count * 0.1f);
+		if (randomValue > _leafSpawnProbability) return;
+
+		// 计算树叶位置（在分支的中间位置）
+		Vector3 leafPosition = Vector3.Lerp(branch._start, branch._end, 0.5f);
+		
+		// 计算树叶旋转
+		Quaternion leafRotation = Quaternion.LookRotation(branch._direction);
+		// 添加随机旋转
+		float randomRotation = Mathf.PerlinNoise(branch._distanceFromRoot * 0.2f, _branches.Count * 0.2f) * _leafRotationRandomness;
+		leafRotation *= Quaternion.Euler(
+			randomRotation * 360f,
+			randomRotation * 360f,
+			randomRotation * 360f
+		);
+
+		// 随机选择一个树叶预制体
+		int randomIndex = Random.Range(0, _leafPrefabs.Length);
+		if (_leafPrefabs[randomIndex] == null) return; // 确保选中的预制体不为空
+
+		// 实例化树叶
+		GameObject leaf = Instantiate(_leafPrefabs[randomIndex], leafPosition, leafRotation, transform);
+		
+		// 添加生长控制器并初始化
+		LeafGrowthController growthController = leaf.AddComponent<LeafGrowthController>();
+		growthController.Initialize(Vector3.one * _leafSize);
+	}
+
+	/**
+	 * 分配吸引点到分支
+	 **/
+	void AssignAttractorsToBranches() {
+		_activeAttractors.Clear();
+		foreach (Branch b in _branches) {
+			b._attractors.Clear();
+		}
+
+		int ia = 0;
+		foreach (Vector3 attractor in _attractors) {
+			float min = 999999f;
+			Branch closest = null;
+			foreach (Branch b in _branches) {
+				float d = Vector3.Distance(b._end, attractor);
+				if (d < _attractionRange && d < min) {
+					min = d;
+					closest = b;
+				}
+			}
+
+			if (closest != null) {
+				closest._attractors.Add(attractor);
+				_activeAttractors.Add(ia);
+			}
+
+			ia++;
+		}
+	}
+
+	/**
+	 * 生成新分支
+	 **/
+	void GenerateNewBranches() {
+		_extremities.Clear();
+		List<Branch> newBranches = new List<Branch>();
+
+		foreach (Branch b in _branches) {
+			if (b._attractors.Count > 0) {
+				Vector3 dir = new Vector3(0, 0, 0);
+				foreach (Vector3 attr in b._attractors) {
+					dir += (attr - b._end).normalized;
+				}
+				dir /= b._attractors.Count;
+				dir += RandomGrowthVector();
+				dir.Normalize();
+
+				Branch nb = new Branch(b._end, b._end + dir * _branchLength, dir, b);
+				nb._distanceFromRoot = b._distanceFromRoot + 1;
+				b._children.Add(nb);
+				newBranches.Add(nb);
+				_extremities.Add(nb);
+
+				SpawnLeaf(nb);
+			} else {
+				if (b._children.Count == 0) {
+					_extremities.Add(b);
+				}
+			}
+		}
+
+		_branches.AddRange(newBranches);
+	}
+
+	/**
+	 * 生长末端分支
+	 **/
+	void GrowExtremities() {
+		for (int i = 0; i < _extremities.Count; i++) {
+			Branch e = _extremities[i];
+			Vector3 start = e._end;
+			Vector3 dir = e._direction + RandomGrowthVector();
+			Vector3 end = e._end + dir * _branchLength;
+			Branch nb = new Branch(start, end, dir, e);
+
+			e._children.Add(nb);
+			_branches.Add(nb);
+			_extremities[i] = nb;
 		}
 	}
 }
