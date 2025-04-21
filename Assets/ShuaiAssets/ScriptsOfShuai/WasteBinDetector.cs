@@ -31,11 +31,11 @@ public class WasteBinDetector : MonoBehaviour
         Collider collider = GetComponent<Collider>();
         if (collider == null)
         {
-            Debug.LogError($"垃圾桶 {gameObject.name} 缺少Collider组件！");
+          //  Debug.LogError($"垃圾桶 {gameObject.name} 缺少Collider组件！");
         }
         else
         {
-            Debug.Log($"垃圾桶 {gameObject.name} Collider设置: IsTrigger={collider.isTrigger}");
+          //  Debug.Log($"垃圾桶 {gameObject.name} Collider设置: IsTrigger={collider.isTrigger}");
         }
 
         // 检查垃圾桶类型设置
@@ -47,18 +47,18 @@ public class WasteBinDetector : MonoBehaviour
 
         if (selectedCount == 0)
         {
-            Debug.LogError($"垃圾桶 {gameObject.name} 没有选择任何垃圾类型！");
+           // Debug.LogError($"垃圾桶 {gameObject.name} 没有选择任何垃圾类型！");
         }
         else if (selectedCount > 1)
         {
-            Debug.LogError($"垃圾桶 {gameObject.name} 选择了多个垃圾类型！");
+          //  Debug.LogError($"垃圾桶 {gameObject.name} 选择了多个垃圾类型！");
         }
         else
         {
             string type = isFoodWaste ? "食物" : 
                          isRecyclables ? "可回收" : 
                          isLandfill ? "其他" : "堆肥";
-            Debug.Log($"垃圾桶 {gameObject.name} 设置为: {type}垃圾桶");
+           // Debug.Log($"垃圾桶 {gameObject.name} 设置为: {type}垃圾桶");
         }
     }
 
@@ -101,12 +101,26 @@ public class WasteBinDetector : MonoBehaviour
             if (ScoreSystem.Instance != null)
             {
                 ScoreSystem.Instance.AddScore(1);
-                Debug.Log("分类正确！得分 +1");
+               // Debug.Log("分类正确！得分 +1");
+            }
+
+            // 检查物体是否有UISystemOfOBJ组件并触发成功事件
+            UISystemOfOBJ uiSystem = other.gameObject.GetComponentInChildren<UISystemOfOBJ>();
+            if (uiSystem != null)
+            {
+                uiSystem.TriggerWin();
             }
         }
         else
         {
-            Debug.Log("分类错误，请放入正确的垃圾桶");
+           // Debug.Log("分类错误，请放入正确的垃圾桶");
+
+            // 检查物体是否有UISystemOfOBJ组件并触发失败事件
+            UISystemOfOBJ uiSystem = other.gameObject.GetComponentInChildren<UISystemOfOBJ>();
+            if (uiSystem != null)
+            {
+                uiSystem.TriggerFail();
+            }
         }
     }
 
@@ -127,7 +141,7 @@ public class WasteBinDetector : MonoBehaviour
 
         if (selectedCount > 1)
         {
-            Debug.LogWarning("每个检测器只能选择一种垃圾类型！");
+          //  Debug.LogWarning("每个检测器只能选择一种垃圾类型！");
             isFoodWaste = false;
             isRecyclables = false;
             isLandfill = false;

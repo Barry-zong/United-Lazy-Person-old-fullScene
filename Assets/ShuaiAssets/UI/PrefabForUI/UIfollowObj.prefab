@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317649035993525351}
+  - component: {fileID: 4039292284398078676}
   m_Layer: 0
   m_Name: UIfollowObj
   m_TagString: Untagged
@@ -33,6 +34,18 @@ Transform:
   - {fileID: 717693004251282258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4039292284398078676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658562640354028998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f50870e0cd98c47b3a5e0a7429db80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1580078610037822841
 GameObject:
   m_ObjectHideFlags: 0
@@ -49,6 +62,7 @@ GameObject:
   - component: {fileID: 7756866867770586870}
   - component: {fileID: 9211252946773153288}
   - component: {fileID: 516311683511460074}
+  - component: {fileID: 1249456665005216380}
   m_Layer: 5
   m_Name: Canvas_localObj
   m_TagString: Untagged
@@ -206,6 +220,19 @@ MonoBehaviour:
   targetCamera: {fileID: 0}
   lockYRotation: 0
   invertFacing: 1
+--- !u!114 &1249456665005216380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580078610037822841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56549cdaaf4d81e4387b02698fd3daa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderRadius: {x: 5, y: 5, z: 5, w: 5}
 --- !u!1 &3469094052116935581
 GameObject:
   m_ObjectHideFlags: 0

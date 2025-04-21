@@ -18,6 +18,13 @@ public class FaceCameraZ : MonoBehaviour
         {
             targetCamera = Camera.main.transform;
         }
+
+        // 检查当前物体上的Canvas组件
+        Canvas canvas = GetComponent<Canvas>();
+        if (canvas != null && canvas.worldCamera == null)
+        {
+            canvas.worldCamera = Camera.main;
+        }
     }
 
     void Update()

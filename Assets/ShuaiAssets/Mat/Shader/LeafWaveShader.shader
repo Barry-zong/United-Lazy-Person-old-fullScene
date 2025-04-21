@@ -20,6 +20,8 @@ Shader "Universal Render Pipeline/Transparent/Cutout/Self Illum Diffuse Shake" {
             "IgnoreProjector"="True"
             "RenderType"="TransparentCutout"
             "RenderPipeline" = "UniversalPipeline"
+            "UniversalMaterialType" = "Lit"
+            "VRCFallback" = "Hidden"
         }
         LOD 200
         
@@ -32,6 +34,15 @@ Shader "Universal Render Pipeline/Transparent/Cutout/Self Illum Diffuse Shake" {
             #pragma prefer_hlslcc gles
             #pragma exclude_renderers d3d11_9x
             #pragma target 3.0
+            
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
+            #pragma multi_compile _ _SHADOWS_SOFT
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile _ _REFLECTION_PROBE_BLENDING
+            #pragma multi_compile _ _REFLECTION_PROBE_BOX_PROJECTION
             
             #pragma vertex vert
             #pragma fragment frag
@@ -160,6 +171,15 @@ Shader "Universal Render Pipeline/Transparent/Cutout/Self Illum Diffuse Shake" {
             #pragma prefer_hlslcc gles
             #pragma exclude_renderers d3d11_9x
             #pragma target 3.0
+            
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
+            #pragma multi_compile _ _SHADOWS_SOFT
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile _ _REFLECTION_PROBE_BLENDING
+            #pragma multi_compile _ _REFLECTION_PROBE_BOX_PROJECTION
             
             #pragma vertex vert
             #pragma fragment frag

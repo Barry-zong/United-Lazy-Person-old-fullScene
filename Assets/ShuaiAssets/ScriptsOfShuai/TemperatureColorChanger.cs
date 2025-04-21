@@ -5,6 +5,7 @@ namespace CustomInteraction
     {
         [Header("Color Settings")]
         public Material targetMaterial;
+        public UISystemOfOBJ uisysys;
         public Color coldColor = Color.blue;
         public Color hotColor = Color.red;
         private bool Firstadded = true;
@@ -15,6 +16,7 @@ namespace CustomInteraction
 
         private void Start()
         {
+           // uisysys = GetComponent<UISystemOfOBJ>();
             if (targetMaterial == null)
             {
                 var renderer = GetComponent<Renderer>();
@@ -47,9 +49,11 @@ namespace CustomInteraction
             {
                 if (Firstadded)
                 {
+                   
                     ScoreSystem.Instance.AddScore(1);
+                     uisysys.TriggerWin();
                     Firstadded = false;
-                    Debug.Log($"Score added! Temperature: {temperature}");
+                   // Debug.Log($"Score added! Temperature: {temperature}");
                 }
             }
 
