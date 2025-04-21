@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BinCoverAutoOpen : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class BinCoverAutoOpen : MonoBehaviour
     private Quaternion initialRotation;    // 改用Quaternion存储初始旋转
     private bool isRotating = false;
     private bool isOpen = false;
+    private HashSet<GameObject> handsInTrigger = new HashSet<GameObject>(); // 跟踪区域内的手
 
     private void Start()
     {
@@ -91,6 +93,7 @@ public class BinCoverAutoOpen : MonoBehaviour
         
         if (other.CompareTag("Hand") && !testMode)
         {
+            handsInTrigger.Add(other.gameObject);
             isRotating = true;
             isOpen = true;
         }
@@ -102,8 +105,14 @@ public class BinCoverAutoOpen : MonoBehaviour
         
         if (other.CompareTag("Hand") && !testMode)
         {
-            isRotating = true;
-            isOpen = false;
+            handsInTrigger.Remove(other.gameObject);
+            
+            // 只有当所有手都离开时才关闭
+            if (handsInTrigger.Count == 0)
+            {
+                isRotating = true;
+                isOpen = false;
+            }
         }
     }
 }

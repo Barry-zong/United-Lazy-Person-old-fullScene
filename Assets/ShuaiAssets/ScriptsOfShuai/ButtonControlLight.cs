@@ -3,6 +3,7 @@ using UnityEngine;
 public class ButtonControlLight : MonoBehaviour
 {
     private Collider DetectBox;
+    public UISystemOfOBJ uisysys;
     public GameObject Light;
     private bool Firstadded = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,13 +19,15 @@ public class ButtonControlLight : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Light.SetActive(false);
-        if (Firstadded)
+        if (other.CompareTag("Hand"))
         {
-          //  Debug.Log("scoreadded");
-                
-           ScoreSystem.Instance.AddScore(1);
-            Firstadded = false;
+            Light.SetActive(false);
+            if (Firstadded)
+            {
+                ScoreSystem.Instance.AddScore(1);
+                uisysys.TriggerWin();
+                Firstadded = false;
+            }
         }
     }
 }

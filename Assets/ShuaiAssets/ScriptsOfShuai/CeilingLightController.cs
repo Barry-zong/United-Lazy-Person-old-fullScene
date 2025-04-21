@@ -4,7 +4,8 @@ public class CeilingLightController : MonoBehaviour
 {
     // 天花板灯游戏对象
     public GameObject ceilingLight;
-
+    public GameObject ceilingLight2;
+public UISystemOfOBJ uisysys;
     // 记录初始旋转值
     private Quaternion initialRotation;
 
@@ -61,8 +62,28 @@ public class CeilingLightController : MonoBehaviour
             {
                 Debug.Log("light off add point");
                
-                    ScoreSystem.Instance.AddScore(1);
-                   
+                ScoreSystem.Instance.AddScore(1);
+                   uisysys.TriggerWin();
+                
+                // 禁用两个灯的 AutoFloat 脚本
+                if (ceilingLight != null)
+                {
+                    AutoFloat autoFloat1 = ceilingLight.GetComponent<AutoFloat>();
+                    if (autoFloat1 != null)
+                    {
+                        autoFloat1.enabled = false;
+                    }
+                }
+                
+                if (ceilingLight2 != null)
+                {
+                    AutoFloat autoFloat2 = ceilingLight2.GetComponent<AutoFloat>();
+                    if (autoFloat2 != null)
+                    {
+                        autoFloat2.enabled = false;
+                    }
+                }
+                
                 isFirstSwitch = false;
             }
             else

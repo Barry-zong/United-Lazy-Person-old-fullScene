@@ -16,7 +16,7 @@ public class PlayerPartUI : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<PlayerPartUI>();
+                _instance = FindFirstObjectByType<PlayerPartUI>();
                 if (_instance == null)
                 {
                     GameObject obj = new GameObject("PlayerPartUI");

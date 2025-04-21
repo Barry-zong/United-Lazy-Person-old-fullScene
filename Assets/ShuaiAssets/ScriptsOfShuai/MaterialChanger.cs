@@ -5,6 +5,7 @@ public class MaterialChanger : MonoBehaviour
     public Material targetMaterial;
     private bool Firstadded = true;
     public Color triggerColor = Color.red;
+    public UISystemOfOBJ uisysys;
     public Color triggerColorS = Color.red;
 
     void Start()
@@ -19,7 +20,7 @@ public class MaterialChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (targetMaterial != null)
+        if (targetMaterial != null && other.CompareTag("Hand"))
         {
             // 修改材质的发光颜色
             targetMaterial.SetColor("_EmissionColor", triggerColor);
@@ -29,6 +30,7 @@ public class MaterialChanger : MonoBehaviour
             if (Firstadded)
             {
                 ScoreSystem.Instance.AddScore(1);
+                uisysys.TriggerWin();
                 Firstadded = false;
             }
         }

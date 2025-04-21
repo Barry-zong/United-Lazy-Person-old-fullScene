@@ -7,6 +7,7 @@ public class UiObjHandInteract : MonoBehaviour
     public float animationDuration = 0.3f;
     private Vector3 originalScale;
     private Coroutine scaleCoroutine;
+    private int handCount = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,12 +25,16 @@ public class UiObjHandInteract : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            UIpartObj.SetActive(true);
-            if (scaleCoroutine != null)
+            handCount++;
+            if (handCount == 1)
             {
-                StopCoroutine(scaleCoroutine);
+                UIpartObj.SetActive(true);
+                if (scaleCoroutine != null)
+                {
+                    StopCoroutine(scaleCoroutine);
+                }
+                scaleCoroutine = StartCoroutine(ScaleObject(Vector3.zero, originalScale));
             }
-            scaleCoroutine = StartCoroutine(ScaleObject(Vector3.zero, originalScale));
         }
     }
 
@@ -37,11 +42,16 @@ public class UiObjHandInteract : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            if (scaleCoroutine != null)
+            handCount--;
+            if (handCount <= 0)
             {
-                StopCoroutine(scaleCoroutine);
+                handCount = 0;
+                if (scaleCoroutine != null)
+                {
+                    StopCoroutine(scaleCoroutine);
+                }
+                scaleCoroutine = StartCoroutine(ScaleObject(originalScale, Vector3.zero, true));
             }
-            scaleCoroutine = StartCoroutine(ScaleObject(originalScale, Vector3.zero, true));
         }
     }
 

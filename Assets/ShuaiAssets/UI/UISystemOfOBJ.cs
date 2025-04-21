@@ -17,6 +17,7 @@ public class UISystemOfOBJ : MonoBehaviour
     [SerializeField] private string failureReminderContent; // 失败提醒
     [TextArea(2, 50)]
     [SerializeField] private string reasonHintContent;      // 原因提示
+    [SerializeField] private int ObjSort = 0;      // 分类
 
     [SerializeField] private GameObject needCloseOBJ;       // 需要关闭的游戏对象
     #endregion
@@ -60,6 +61,10 @@ public class UISystemOfOBJ : MonoBehaviour
         if (PlayerPartUI.Instance != null)
         {
             PlayerPartUI.Instance.ShowWinUI(lookingBack, congratulationContent, sourceDetailsContent);
+            if (HandSortAchieveSystem.Instance != null && ObjSort != 0)
+            {
+                HandSortAchieveSystem.Instance.ActivateAchieve(ObjSort);
+            }
             if (needCloseOBJ != null) StartCoroutine(ScaleDownAndDisable(needCloseOBJ));
         }
     }

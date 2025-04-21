@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4158729246354388083}
   - component: {fileID: 2667574398981253456}
   - component: {fileID: 4664843006175094071}
+  - component: {fileID: 7965430879274245660}
   m_Layer: 5
   m_Name: Canvas-playUI-fail
   m_TagString: Untagged
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 2c59325cff8447d47899d7e518a87833, type: 2}
   m_Color: {r: 0.010398253, g: 0, b: 0.1981132, a: 0.59607846}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -143,6 +144,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7965430879274245660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84277955924461886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56549cdaaf4d81e4387b02698fd3daa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderRadius: {x: 5, y: 5, z: 5, w: 5}
 --- !u!1 &185529265614082402
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,13 +385,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24.1
+  m_fontSizeBase: 24.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -872,6 +886,7 @@ MonoBehaviour:
   _WinUI: {fileID: 8568398290664581852}
   _FailUI: {fileID: 84277955924461886}
   _autoCloseTime: 4
+  _animationDuration: 0.3
   _text1: {fileID: 3481009489064202673}
   _text2: {fileID: 288612887853396927}
   _text3: {fileID: 8839081267618219434}
@@ -891,6 +906,7 @@ GameObject:
   - component: {fileID: 8202978452791780463}
   - component: {fileID: 7084974168925318822}
   - component: {fileID: 4766653633153105678}
+  - component: {fileID: 5759158805078836123}
   m_Layer: 5
   m_Name: Canvas-playUI-win
   m_TagString: Untagged
@@ -1003,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 2c59325cff8447d47899d7e518a87833, type: 2}
   m_Color: {r: 0.27843142, g: 1, b: 0.8543172, a: 0.39607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1021,3 +1037,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5759158805078836123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568398290664581852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56549cdaaf4d81e4387b02698fd3daa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderRadius: {x: 5, y: 5, z: 5, w: 5}
