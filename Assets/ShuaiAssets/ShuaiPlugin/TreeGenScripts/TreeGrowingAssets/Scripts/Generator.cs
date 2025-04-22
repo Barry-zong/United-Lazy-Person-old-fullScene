@@ -64,8 +64,10 @@ public class Generator : MonoBehaviour {
 	public bool _pauseGrowth = false;
 
 	[Header("树叶设置")]
-	[Tooltip("树叶预制体数组，最多4个")]
+	[Tooltip("普通树叶预制体数组，最多4个")]
 	public GameObject[] _leafPrefabs = new GameObject[4]; // 树叶预制体数组
+	[Tooltip("疯狂树叶预制体数组，最多2个")]
+	public GameObject[] _wildLeafPrefabs = new GameObject[2]; // 疯狂树叶预制体数组
 	[Range(0f, 1f)]
 	public float _leafSpawnProbability = 0.3f; // 生成树叶的概率
 	[Range(0f, 2f)]
@@ -74,6 +76,22 @@ public class Generator : MonoBehaviour {
 	public float _leafRotationRandomness = 0.2f; // 树叶旋转随机度
 	[Range(0, 10)]
 	public int _minDistanceFromRootForLeaves = 3; // 距离根节点最小距离才开始生成树叶
+
+	[Header("分数相关设置")]
+	[Tooltip("触发树枝密集生成的分数阈值")]
+	public int _scoreThreshold = 5;
+	[Tooltip("达到分数阈值后的吸引点数量倍数")]
+	[Range(1f, 3f)]
+	public float _enhancedAttractorMultiplier = 1.5f;
+	[Tooltip("达到分数阈值后的树枝长度倍数")]
+	[Range(1f, 2f)]
+	public float _enhancedBranchLengthMultiplier = 1.2f;
+	[Tooltip("达到分数阈值后的吸引范围倍数")]
+	[Range(1f, 2f)]
+	public float _enhancedAttractionRangeMultiplier = 1.3f;
+	[Tooltip("达到分数阈值后的随机生长强度倍数")]
+	[Range(1f, 3f)]
+	public float _enhancedRandomGrowthMultiplier = 1.5f;
 
 	[Header("Mesh generation")]
 	[Range(0, 20)]
@@ -138,7 +156,7 @@ public class Generator : MonoBehaviour {
 	/**
 	 * Returns a 3D random vector of _randomGrowth magniture 
 	 **/
-	Vector3 RandomGrowthVector () {
+	Vector3 RandomGrowthVector (float randomGrowth) {
 		// 使用分支的ID和距离根节点的距离来生成固定的随机值
 		float alpha = Mathf.PerlinNoise(_timeSinceLastIteration * 0.1f, _branches.Count * 0.1f) * Mathf.PI;
 		float theta = Mathf.PerlinNoise(_branches.Count * 0.1f, _timeSinceLastIteration * 0.1f) * Mathf.PI * 2f;
@@ -149,7 +167,7 @@ public class Generator : MonoBehaviour {
 			Mathf.Cos(alpha)
 		);
 
-		return pt * _randomGrowth;
+		return pt * randomGrowth;
 	}
 
 	// Start is called before the first frame update
@@ -161,7 +179,12 @@ public class Generator : MonoBehaviour {
 			Random.InitState(System.Environment.TickCount);
 		}
 		
-		GenerateAttractors(_nbAttractors, _radius);
+		// 获取当前分数并调整参数
+		int currentScore = ScoreSystem.Instance.GetCurrentScore();
+		int adjustedNbAttractors = currentScore >= _scoreThreshold ? 
+			Mathf.RoundToInt(_nbAttractors * _enhancedAttractorMultiplier) : _nbAttractors;
+		
+		GenerateAttractors(adjustedNbAttractors, _radius);
 
 		_filter = GetComponent<MeshFilter>();
 
@@ -187,6 +210,17 @@ public class Generator : MonoBehaviour {
 	 * 执行一次生长步骤
 	 **/
 	void GrowOneStep() {
+		// 获取当前分数
+		int currentScore = ScoreSystem.Instance.GetCurrentScore();
+		
+		// 根据分数调整生长参数
+		float adjustedBranchLength = currentScore >= _scoreThreshold ? 
+			_branchLength * _enhancedBranchLengthMultiplier : _branchLength;
+		float adjustedAttractionRange = currentScore >= _scoreThreshold ? 
+			_attractionRange * _enhancedAttractionRangeMultiplier : _attractionRange;
+		float adjustedRandomGrowth = currentScore >= _scoreThreshold ? 
+			_randomGrowth * _enhancedRandomGrowthMultiplier : _randomGrowth;
+
 		// 标记已生长的末端
 		foreach (Branch b in _extremities) {
 			b._grown = true;
@@ -205,13 +239,13 @@ public class Generator : MonoBehaviour {
 
 		if (_attractors.Count > 0) {
 			// 分配吸引点到分支
-			AssignAttractorsToBranches();
+			AssignAttractorsToBranches(adjustedAttractionRange);
 			
 			// 生成新分支
 			if (_activeAttractors.Count != 0) {
-				GenerateNewBranches();
+				GenerateNewBranches(adjustedBranchLength, adjustedRandomGrowth);
 			} else {
-				GrowExtremities();
+				GrowExtremities(adjustedBranchLength, adjustedRandomGrowth);
 			}
 		}
 
@@ -376,39 +410,86 @@ public class Generator : MonoBehaviour {
 		if (_leafPrefabs == null || _leafPrefabs.Length == 0) return;
 		if (branch._distanceFromRoot < _minDistanceFromRootForLeaves) return;
 		
+		// 获取当前分数
+		int currentScore = ScoreSystem.Instance.GetCurrentScore();
+		float spawnProbability = currentScore >= _scoreThreshold ? _leafSpawnProbability : _leafSpawnProbability;
+		
 		// 使用Perlin噪声生成固定的随机值
 		float randomValue = Mathf.PerlinNoise(branch._distanceFromRoot * 0.1f, _branches.Count * 0.1f);
-		if (randomValue > _leafSpawnProbability) return;
+		if (randomValue > spawnProbability) return;
 
-		// 计算树叶位置（在分支的中间位置）
-		Vector3 leafPosition = Vector3.Lerp(branch._start, branch._end, 0.5f);
-		
-		// 计算树叶旋转
-		Quaternion leafRotation = Quaternion.LookRotation(branch._direction);
-		// 添加随机旋转
-		float randomRotation = Mathf.PerlinNoise(branch._distanceFromRoot * 0.2f, _branches.Count * 0.2f) * _leafRotationRandomness;
-		leafRotation *= Quaternion.Euler(
-			randomRotation * 360f,
-			randomRotation * 360f,
-			randomRotation * 360f
-		);
+		// 生成多个树叶
+		for (int i = 0; i < 1; i++) {
+			// 计算树叶位置
+			Vector3 leafPosition;
+			float randomOffset;
+			
+			// 判断是否生成狂野分布的树叶
+			bool isWildLeaf = currentScore >= _scoreThreshold && Random.value < _leafSpawnProbability;
+			
+			if (isWildLeaf) {
+				// 狂野分布：生成更远的随机位置
+				randomOffset = Random.Range(-0.3f, 0.3f);
+				// 使用分支方向作为基础，添加随机偏移
+				Vector3 randomDirection = branch._direction + new Vector3(
+					Random.Range(-1f, 1f),
+					Random.Range(-1f, 1f),
+					Random.Range(-1f, 1f)
+				).normalized * 0.5f;
+				leafPosition = branch._end + randomDirection * _branchLength * randomOffset;
+			} else {
+				// 正常分布：在分支上生成
+				randomOffset = Random.Range(-0.3f, 0.3f);
+				leafPosition = Vector3.Lerp(branch._start, branch._end, 0.5f + randomOffset);
+			}
+			
+			// 计算树叶旋转
+			Quaternion leafRotation = Quaternion.LookRotation(branch._direction);
+			// 添加随机旋转，在达到阈值时增加旋转随机度
+			float randomRotation = Mathf.PerlinNoise(branch._distanceFromRoot * 0.2f, _branches.Count * 0.2f) * 
+								 _leafRotationRandomness;
+			leafRotation *= Quaternion.Euler(
+				randomRotation * 360f,
+				randomRotation * 360f,
+				randomRotation * 360f
+			);
 
-		// 随机选择一个树叶预制体
-		int randomIndex = Random.Range(0, _leafPrefabs.Length);
-		if (_leafPrefabs[randomIndex] == null) return; // 确保选中的预制体不为空
+			// 选择树叶预制体
+			GameObject leafPrefab;
+			if (isWildLeaf && _wildLeafPrefabs != null && _wildLeafPrefabs.Length > 0) {
+				// 从疯狂树叶预制体中随机选择一个
+				int randomIndex = Random.Range(0, _wildLeafPrefabs.Length);
+				leafPrefab = _wildLeafPrefabs[randomIndex];
+			} else {
+				// 从普通树叶预制体中随机选择一个
+				int randomIndex = Random.Range(0, _leafPrefabs.Length);
+				leafPrefab = _leafPrefabs[randomIndex];
+			}
 
-		// 实例化树叶
-		GameObject leaf = Instantiate(_leafPrefabs[randomIndex], leafPosition, leafRotation, transform);
-		
-		// 添加生长控制器并初始化
-		LeafGrowthController growthController = leaf.AddComponent<LeafGrowthController>();
-		growthController.Initialize(Vector3.one * _leafSize);
+			if (leafPrefab == null) continue; // 确保选中的预制体不为空
+
+			// 实例化树叶
+			GameObject leaf = Instantiate(leafPrefab, leafPosition, leafRotation, transform);
+			
+			// 计算树叶大小
+			Vector3 leafScale = Vector3.one * _leafSize;
+			if (currentScore >= _scoreThreshold) {
+				float sizeMultiplier = isWildLeaf ? 1.5f : 1f;
+				// 添加随机大小变化
+				float sizeRandomness = Random.Range(-0.3f, 0.3f);
+				leafScale *= sizeMultiplier * (1f + sizeRandomness);
+			}
+			
+			// 添加生长控制器并初始化
+			LeafGrowthController growthController = leaf.AddComponent<LeafGrowthController>();
+			growthController.Initialize(leafScale);
+		}
 	}
 
 	/**
 	 * 分配吸引点到分支
 	 **/
-	void AssignAttractorsToBranches() {
+	void AssignAttractorsToBranches(float attractionRange) {
 		_activeAttractors.Clear();
 		foreach (Branch b in _branches) {
 			b._attractors.Clear();
@@ -420,7 +501,7 @@ public class Generator : MonoBehaviour {
 			Branch closest = null;
 			foreach (Branch b in _branches) {
 				float d = Vector3.Distance(b._end, attractor);
-				if (d < _attractionRange && d < min) {
+				if (d < attractionRange && d < min) {
 					min = d;
 					closest = b;
 				}
@@ -438,7 +519,7 @@ public class Generator : MonoBehaviour {
 	/**
 	 * 生成新分支
 	 **/
-	void GenerateNewBranches() {
+	void GenerateNewBranches(float branchLength, float randomGrowth) {
 		_extremities.Clear();
 		List<Branch> newBranches = new List<Branch>();
 
@@ -449,10 +530,10 @@ public class Generator : MonoBehaviour {
 					dir += (attr - b._end).normalized;
 				}
 				dir /= b._attractors.Count;
-				dir += RandomGrowthVector();
+				dir += RandomGrowthVector(randomGrowth);
 				dir.Normalize();
 
-				Branch nb = new Branch(b._end, b._end + dir * _branchLength, dir, b);
+				Branch nb = new Branch(b._end, b._end + dir * branchLength, dir, b);
 				nb._distanceFromRoot = b._distanceFromRoot + 1;
 				b._children.Add(nb);
 				newBranches.Add(nb);
@@ -472,12 +553,12 @@ public class Generator : MonoBehaviour {
 	/**
 	 * 生长末端分支
 	 **/
-	void GrowExtremities() {
+	void GrowExtremities(float branchLength, float randomGrowth) {
 		for (int i = 0; i < _extremities.Count; i++) {
 			Branch e = _extremities[i];
 			Vector3 start = e._end;
-			Vector3 dir = e._direction + RandomGrowthVector();
-			Vector3 end = e._end + dir * _branchLength;
+			Vector3 dir = e._direction + RandomGrowthVector(randomGrowth);
+			Vector3 end = e._end + dir * branchLength;
 			Branch nb = new Branch(start, end, dir, e);
 
 			e._children.Add(nb);

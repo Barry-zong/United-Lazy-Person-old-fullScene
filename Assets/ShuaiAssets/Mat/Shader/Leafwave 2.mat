@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cutoff: 0.3
+    - _Cutoff: 0.55
     - _ShakeBending: 0.31
     - _ShakeDisplacement: 1
     - _ShakeTime: 0.02
