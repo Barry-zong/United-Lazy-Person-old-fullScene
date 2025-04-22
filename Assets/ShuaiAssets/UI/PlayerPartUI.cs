@@ -43,7 +43,6 @@ public class PlayerPartUI : MonoBehaviour
             return;
         }
         _instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -71,9 +70,9 @@ public class PlayerPartUI : MonoBehaviour
         }
         if (_FailUI != null) _FailUI.SetActive(false);
 
-        if (_text1 != null) _text1.text = text1;
-        if (_text2 != null) _text2.text = text2;
-        if (_text3 != null) _text3.text = text3;
+        if (_text1 != null && !string.IsNullOrEmpty(text1)) _text1.text = text1;
+        if (_text2 != null && !string.IsNullOrEmpty(text2)) _text2.text = text2;
+        if (_text3 != null && !string.IsNullOrEmpty(text3)) _text3.text = text3;
 
         StartCoroutine(AutoCloseUI(true));
     }
@@ -91,6 +90,20 @@ public class PlayerPartUI : MonoBehaviour
         if (_text5 != null) _text5.text = text5;
 
         StartCoroutine(AutoCloseUI(false));
+    }
+
+    public void ResetUI()
+    {
+        if (_WinUI != null)
+        {
+            _WinUI.SetActive(false);
+            _WinUI.transform.localScale = Vector3.zero;
+        }
+        if (_FailUI != null)
+        {
+            _FailUI.SetActive(false);
+            _FailUI.transform.localScale = Vector3.zero;
+        }
     }
 
     private IEnumerator ScaleAnimation(GameObject uiObject, bool show)

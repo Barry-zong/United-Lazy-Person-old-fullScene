@@ -11,6 +11,8 @@ namespace TreeGrowingAssets.Scripts
         [Header("生长动画设置")]
         [Range(0.1f, 5f)]
         public float growthDuration = 2f; // 生长持续时间
+        [Range(0f, 5f)]
+        public float growthDelay = 2f; // 生长延迟时间
 
         [Header("大小随机设置")]
         [Range(0.5f, 1.5f)]
@@ -30,6 +32,9 @@ namespace TreeGrowingAssets.Scripts
 
         private IEnumerator GrowLeaf()
         {
+            // 等待延迟时间
+            yield return new WaitForSeconds(growthDelay);
+
             while (currentGrowthTime < growthDuration)
             {
                 currentGrowthTime += Time.deltaTime;

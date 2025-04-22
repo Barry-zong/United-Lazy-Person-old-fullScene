@@ -12,6 +12,8 @@ public class TreeGrowthController : MonoBehaviour
     public float growthDuration = 1f;
     [Tooltip("第一次得分时的生长时长（秒）")]
     public float firstGrowthDuration = 3f;
+    [Tooltip("得分后开始生长的延迟时间（秒）")]
+    public float growthDelay = 2f;
 
     private Generator _treeGenerator;
     private float _lastScore;
@@ -68,6 +70,9 @@ public class TreeGrowthController : MonoBehaviour
 
     private IEnumerator GrowthSequence(bool isFirstScore)
     {
+        // 等待延迟时间
+        yield return new WaitForSeconds(growthDelay);
+        
         // 允许生长指定时间
         _treeGenerator._pauseGrowth = false;
         yield return new WaitForSeconds(isFirstScore ? firstGrowthDuration : growthDuration);

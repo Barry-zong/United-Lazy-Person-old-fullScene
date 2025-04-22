@@ -1,0 +1,13 @@
+GTGrass ChangeLog
+
+v1.0.3
+
+-Multiple players interaction is supported now. The radius and strength are not set on the material anymore. You need to set the radius and strength for each player on GTGrassPlayerInteraction.cs now.
+
+v1.0.2
+
+-Fixed compilation error when Universal RP and High Difinition RP not installed.
+
+v1.0.1
+
+-Fixed compilation error when making builds in GTGrassPainter.cs

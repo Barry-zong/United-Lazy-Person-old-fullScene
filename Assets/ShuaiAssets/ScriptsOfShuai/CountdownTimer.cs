@@ -5,6 +5,25 @@ using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
+    private static CountdownTimer _instance;
+    public static CountdownTimer Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindFirstObjectByType<CountdownTimer>();
+                if (_instance == null)
+                {
+                    GameObject go = new GameObject("CountdownTimer");
+                    _instance = go.AddComponent<CountdownTimer>();
+                    DontDestroyOnLoad(go);
+                }
+            }
+            return _instance;
+        }
+    }
+
     [Header("计时器设置")]
     [Tooltip("设置计时总时间（秒）")]
     public float totalTime = 60f;
@@ -20,8 +39,32 @@ public class CountdownTimer : MonoBehaviour
     [Tooltip("倒计时结束时需要关闭的音频源")]
     public AudioSource musicToStop;
 
+    [Header("游戏对象设置")]
+    [Tooltip("倒计时结束时需要禁用的传送点")]
+    public GameObject teleport;
+
     private float timeRemaining;
     private bool isRunning = false;
+    private bool isTimerFinished = false;
+
+    // 公共属性，用于获取计时器是否结束
+    public bool IsTimerFinished => isTimerFinished;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+        
+        // 初始化计时器状态
+        timeRemaining = totalTime;
+        isRunning = false;
+        isTimerFinished = false;
+        UpdateTimerDisplay();
+    }
 
     void Start()
     {
@@ -90,12 +133,13 @@ public class CountdownTimer : MonoBehaviour
     private void TimerFinished()
     {
         isRunning = false;
+        isTimerFinished = true;
 
-        // 如果设置了暂停选项，则暂停游戏
-        if (pauseGameWhenFinished)
+        // 禁用传送点
+        if (teleport != null)
         {
-            Time.timeScale = 0f;
-            Debug.Log("倒计时结束，游戏已暂停");
+            teleport.SetActive(false);
+            Debug.Log("传送点已禁用");
         }
 
         // 关闭指定音频
