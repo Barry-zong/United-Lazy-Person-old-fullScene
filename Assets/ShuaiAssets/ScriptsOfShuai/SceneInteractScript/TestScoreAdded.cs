@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class TestScoreAdded : MonoBehaviour
 {
+    public enum TriggerAction
+    {
+        AddScore,
+        EndGame
+    }
+
+    [SerializeField] private TriggerAction actionType = TriggerAction.AddScore;
     private bool canAddScore = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,7 +27,14 @@ public class TestScoreAdded : MonoBehaviour
     {
         if (other.CompareTag("Hand") && canAddScore)
         {
-            ScoreSystem.Instance.AddScore(1);
+            if (actionType == TriggerAction.AddScore)
+            {
+                ScoreSystem.Instance.AddScore(1);
+            }
+            else if (actionType == TriggerAction.EndGame)
+            {
+                CountdownTimer.Instance.SetRemainingTime(3f);
+            }
             canAddScore = false;
         }
     }

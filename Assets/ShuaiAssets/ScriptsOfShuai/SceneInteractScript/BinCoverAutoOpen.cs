@@ -25,6 +25,7 @@ public class BinCoverAutoOpen : MonoBehaviour
     private bool isRotating = false;
     private bool isOpen = false;
     private HashSet<GameObject> handsInTrigger = new HashSet<GameObject>(); // 跟踪区域内的手
+    private bool isGameEnded = false; // 游戏是否结束
 
     private void Start()
     {
@@ -40,6 +41,18 @@ public class BinCoverAutoOpen : MonoBehaviour
     private void Update()
     {
         if (binCover == null) return;
+
+        // 检查游戏是否结束
+        if (CountdownTimer.Instance != null && CountdownTimer.Instance.IsTimerFinished)
+        {
+            isGameEnded = true;
+            // 如果游戏结束，强制关闭垃圾桶盖
+            if (isOpen)
+            {
+                isRotating = true;
+                isOpen = false;
+            }
+        }
 
         if (testMode)
         {
@@ -89,7 +102,7 @@ public class BinCoverAutoOpen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == null) return;
+        if (other == null || isGameEnded) return; // 如果游戏结束，不响应触发
         
         if (other.CompareTag("Hand") && !testMode)
         {
@@ -101,7 +114,7 @@ public class BinCoverAutoOpen : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == null) return;
+        if (other == null || isGameEnded) return; // 如果游戏结束，不响应触发
         
         if (other.CompareTag("Hand") && !testMode)
         {

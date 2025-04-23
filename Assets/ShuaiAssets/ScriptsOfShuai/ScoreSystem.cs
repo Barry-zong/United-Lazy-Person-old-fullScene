@@ -14,6 +14,7 @@ public class ScoreSystem : MonoBehaviour
 
     // 分数变量，后续会使用NetworkVariable
     private int currentScore = 0;
+    private bool canAddScore = true; // 控制是否允许加分
 
     // 单例模式，使其他脚本可以访问
     public static ScoreSystem Instance { get; private set; }
@@ -54,6 +55,8 @@ public class ScoreSystem : MonoBehaviour
     // 供外部调用的加分方法
     public void AddScore(int amount)
     {
+        if (!canAddScore) return; // 如果不允许加分，直接返回
+
         // 记录旧分数
         int oldScore = currentScore;
 
@@ -73,6 +76,8 @@ public class ScoreSystem : MonoBehaviour
     // 供外部调用的设置分数方法
     public void SetScore(int newScore)
     {
+        if (!canAddScore) return; // 如果不允许加分，直接返回
+
         // 记录旧分数
         int oldScore = currentScore;
 
@@ -93,6 +98,12 @@ public class ScoreSystem : MonoBehaviour
     public int GetCurrentScore()
     {
         return currentScore;
+    }
+
+    // 设置是否允许加分
+    public void SetCanAddScore(bool canAdd)
+    {
+        canAddScore = canAdd;
     }
 
     // 更新UI显示

@@ -5,6 +5,7 @@ using System.Collections;
 public class EndingEvent : MonoBehaviour
 {
     public GameObject endingUI;
+    public GameObject endingUI2;
     public float restartDelay = 60f; // 游戏结束后多久重启场景
     private bool hasEnded = false;
     private float endTime;
@@ -13,6 +14,7 @@ public class EndingEvent : MonoBehaviour
     void Start()
     {
         endingUI.SetActive(false);
+        endingUI2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +25,12 @@ public class EndingEvent : MonoBehaviour
             hasEnded = true;
             endTime = Time.time;
             endingUI.SetActive(true);
+            endingUI2.SetActive(true);
+            // 禁用加分系统
+            if (ScoreSystem.Instance != null)
+            {
+                ScoreSystem.Instance.SetCanAddScore(false);
+            }
         }
 
         if (hasEnded && Time.time - endTime >= restartDelay)

@@ -152,4 +152,10 @@ public class CountdownTimer : MonoBehaviour
         // 在这里添加倒计时结束时需要执行的逻辑
         Debug.Log("倒计时结束");
     }
+
+    public void SetRemainingTime(float time)
+    {
+        timeRemaining = time;
+        UpdateTimerDisplay();
+    }
 }

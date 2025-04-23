@@ -115,7 +115,7 @@ Material:
     - _BladeWidthRandom: 0.02
     - _BladeWidthRange: 0.017
     - _Blend: 0
-    - _BufferCount: 3
+    - _BufferCount: 2
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
