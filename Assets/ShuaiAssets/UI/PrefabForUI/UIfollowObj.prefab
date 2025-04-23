@@ -46,6 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f50870e0cd98c47b3a5e0a7429db80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookingBack: 
+  congratulationContent: 
+  sourceDetailsContent: 
+  failureReminderContent: 
+  reasonHintContent: 
+  ObjSort: 0
+  needCloseOBJ: {fileID: 0}
 --- !u!1 &1580078610037822841
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,10 +305,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: hihow ds dsa dh
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acf088d9804cfd74c8862a7cb1e737d7, type: 2}
+  m_sharedMaterial: {fileID: 2999631173480358228, guid: acf088d9804cfd74c8862a7cb1e737d7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -628,6 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIpartObj: {fileID: 1580078610037822841}
+  animationDuration: 0.3
 --- !u!54 &1083123966051302606
 Rigidbody:
   m_ObjectHideFlags: 0
