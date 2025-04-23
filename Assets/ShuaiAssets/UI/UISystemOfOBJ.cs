@@ -137,7 +137,7 @@ public class UISystemOfOBJ : MonoBehaviour
         }
 
         obj.SetActive(false);
-        obj.transform.localScale = originalScale; // 重置缩放，以便下次使用
+        Destroy(obj); // 销毁对象
     }
     #endregion
 }
