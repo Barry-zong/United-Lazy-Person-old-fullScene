@@ -13,8 +13,14 @@ public class EndingEvent : MonoBehaviour
     // 添加触发检测相关变量
     private int triggerCount = 0;
     private float lastTriggerTime;
-    private float doubleTriggerThreshold = 3f; // 两次触发的最大时间间隔
-    private int requiredTriggerCount = 5; // 需要触发的次数
+    [SerializeField ]
+    private float doubleTriggerThreshold = 2f; // 两次触发的最大时间间隔
+    [SerializeField ]
+    private int requiredTriggerCount = 4; // 需要触发的次数
+
+    // 添加手部交互相关变量
+    private float handTriggerCooldown = 0.5f; // 手部交互冷却时间
+    private float lastHandTriggerTime; // 上次手部交互时间
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -65,6 +71,15 @@ public class EndingEvent : MonoBehaviour
             }
             
             lastTriggerTime = currentTime;
+        }
+        else if (other.CompareTag("RightHand"))
+        {
+            float currentTime = Time.time;
+            if (currentTime - lastHandTriggerTime >= handTriggerCooldown)
+            {
+                WristUI.Instance.ToggleUI();
+                lastHandTriggerTime = currentTime;
+            }
         }
     }
 

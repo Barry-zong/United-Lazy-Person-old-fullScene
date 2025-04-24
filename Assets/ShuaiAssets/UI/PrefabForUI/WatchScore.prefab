@@ -651,6 +651,8 @@ MonoBehaviour:
   endingUI: {fileID: 0}
   endingUI2: {fileID: 0}
   restartDelay: 60
+  doubleTriggerThreshold: 2
+  requiredTriggerCount: 4
 --- !u!1 &8220778852499849276
 GameObject:
   m_ObjectHideFlags: 0

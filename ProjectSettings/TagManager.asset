@@ -10,6 +10,7 @@ TagManager:
   - LandFill
   - Recyclables
   - Compost
+  - RightHand
   layers:
   - Default
   - TransparentFX

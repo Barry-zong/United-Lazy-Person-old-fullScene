@@ -11,7 +11,7 @@ public class GuildOfGameOBJ : MonoBehaviour
     public Color emissionColor = Color.white;
     public GameObject followActiveObj;
 
-    private Material material;
+    private Material[] materials;
     private bool isBreathing = false;
     private float currentIntensity = 0f;
     private float timer = 0f;
@@ -51,24 +51,30 @@ public class GuildOfGameOBJ : MonoBehaviour
             return;
         }
 
-        // 实例化材质
-        material = new Material(renderer.material);
-        renderer.material = material;
-
-        // 启用自发光
-        material.EnableKeyword("_EMISSION");
-        material.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
-
-        // 移除Emission Map
-        if (material.HasProperty("_EmissionMap"))
+        // 获取所有材质
+        materials = new Material[renderer.materials.Length];
+        for (int i = 0; i < renderer.materials.Length; i++)
         {
-            material.SetTexture("_EmissionMap", null);
+            // 实例化每个材质
+            materials[i] = new Material(renderer.materials[i]);
+            // 启用自发光
+            materials[i].EnableKeyword("_EMISSION");
+            materials[i].globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
+
+            // 移除Emission Map
+            if (materials[i].HasProperty("_EmissionMap"))
+            {
+                materials[i].SetTexture("_EmissionMap", null);
+            }
+
+            // 设置默认自发光强度为-10
+            float initialIntensity = Mathf.Pow(2, minIntensity);
+            Color initialColor = emissionColor * initialIntensity;
+            materials[i].SetColor("_EmissionColor", initialColor);
         }
 
-        // 设置默认自发光强度为-10
-        float initialIntensity = Mathf.Pow(2, minIntensity);
-        Color initialColor = emissionColor * initialIntensity;
-        material.SetColor("_EmissionColor", initialColor);
+        // 应用所有新材质
+        renderer.materials = materials;
         isInitialized = true;
     }
 
@@ -114,12 +120,15 @@ public class GuildOfGameOBJ : MonoBehaviour
                 }
             }
 
-            // 应用自发光强度
-            if (material != null)
+            // 应用自发光强度到所有材质
+            if (materials != null)
             {
                 float intensity = Mathf.Pow(2, currentIntensity);
                 Color newColor = emissionColor * intensity;
-                material.SetColor("_EmissionColor", newColor);
+                foreach (var material in materials)
+                {
+                    material.SetColor("_EmissionColor", newColor);
+                }
             }
 
             timer += Time.deltaTime;
@@ -127,12 +136,15 @@ public class GuildOfGameOBJ : MonoBehaviour
         else if (isBreathing)
         {
             isBreathing = false;
-            if (material != null)
+            if (materials != null)
             {
                 // 恢复默认发光强度为-10
                 float defaultIntensity = Mathf.Pow(2, minIntensity);
                 Color defaultColor = emissionColor * defaultIntensity;
-                material.SetColor("_EmissionColor", defaultColor);
+                foreach (var material in materials)
+                {
+                    material.SetColor("_EmissionColor", defaultColor);
+                }
             }
         }
     }
