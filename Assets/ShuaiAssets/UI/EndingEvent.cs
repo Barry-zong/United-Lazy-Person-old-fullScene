@@ -10,6 +10,12 @@ public class EndingEvent : MonoBehaviour
     private bool hasEnded = false;
     private float endTime;
     
+    // 添加触发检测相关变量
+    private int triggerCount = 0;
+    private float lastTriggerTime;
+    private float doubleTriggerThreshold = 3f; // 两次触发的最大时间间隔
+    private int requiredTriggerCount = 5; // 需要触发的次数
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,9 +47,24 @@ public class EndingEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (CountdownTimer.Instance.IsTimerFinished && other.CompareTag("Finish"))
+        if (other.CompareTag("Finish"))
         {
-            RestartScene();
+            float currentTime = Time.time;
+            
+            if (currentTime - lastTriggerTime <= doubleTriggerThreshold)
+            {
+                triggerCount++;
+                if (triggerCount >= requiredTriggerCount)
+                {
+                    RestartScene();
+                }
+            }
+            else
+            {
+                triggerCount = 1;
+            }
+            
+            lastTriggerTime = currentTime;
         }
     }
 

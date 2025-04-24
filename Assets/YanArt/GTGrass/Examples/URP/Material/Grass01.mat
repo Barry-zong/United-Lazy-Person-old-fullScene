@@ -136,7 +136,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _PlayerInteraction: 1
-    - _Power: 4.41
+    - _Power: 4.29
     - _QueueOffset: 0
     - _Radius: 1
     - _ReceiveLights: 0
@@ -160,14 +160,14 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BottomColor: {r: 0.07734459, g: 0.5471698, b: 0.04387683, a: 1}
+    - _BottomColor: {r: 0.007843139, g: 0.52156866, b: 0.4593799, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PlayerPosition: {r: 3.48, g: 0, b: 0, a: 0}
     - _ShadowCalibration: {r: -0.45, g: 0, b: 1.5, a: 0}
     - _ShadowOffset: {r: -1, g: 0, b: 2, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _TopColor: {r: 1.4597147, g: 3.3238614, b: 0.9250369, a: 1}
+    - _TopColor: {r: 2.6234465, g: 0.68732584, b: 0, a: 1}
     - _WindFrequency: {r: 0.004, g: 0.004, b: 0, a: 0}
     - _WindOffset: {r: -0.99, g: -0.18, b: 0.1, a: 0}
     - _WindVelocity: {r: 1.15, g: 0, b: 1, a: 1}

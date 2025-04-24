@@ -42,6 +42,7 @@ public class CountdownTimer : MonoBehaviour
     [Header("游戏对象设置")]
     [Tooltip("倒计时结束时需要禁用的传送点")]
     public GameObject teleport;
+    public GameObject teleport2;
 
     private float timeRemaining;
     private bool isRunning = false;
@@ -139,7 +140,13 @@ public class CountdownTimer : MonoBehaviour
         if (teleport != null)
         {
             teleport.SetActive(false);
-            Debug.Log("传送点已禁用");
+            Debug.Log("传送点1已禁用");
+        }
+
+        if (teleport2 != null)
+        {
+            teleport2.SetActive(false);
+            Debug.Log("传送点2已禁用");
         }
 
         // 关闭指定音频
