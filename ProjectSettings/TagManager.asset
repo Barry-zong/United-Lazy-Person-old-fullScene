@@ -11,6 +11,7 @@ TagManager:
   - Recyclables
   - Compost
   - RightHand
+  - Head
   layers:
   - Default
   - TransparentFX

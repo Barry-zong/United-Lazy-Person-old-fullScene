@@ -11,6 +11,9 @@ public class FaceCameraZ : MonoBehaviour
     [Tooltip("是否反转朝向使物体尾部朝向相机")]
     public bool invertFacing = true;
 
+    [Tooltip("是否启用旋转功能")]
+    public bool isActive = true;
+
     void Start()
     {
         // 如果没有指定目标相机，默认使用主相机
@@ -29,6 +32,8 @@ public class FaceCameraZ : MonoBehaviour
 
     void Update()
     {
+        if (!isActive) return;
+
         if (targetCamera != null)
         {
             Vector3 directionToCamera = targetCamera.position - transform.position;
