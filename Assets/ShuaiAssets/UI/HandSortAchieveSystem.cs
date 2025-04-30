@@ -9,8 +9,8 @@ public class HandSortAchieveSystem : MonoBehaviour
     public float defaultAlpha = 0.5f; // 默认透明度
     public float transitionDuration = 0.5f; // 渐变过渡时间
 
-    private List<Image> achievementImages = new List<Image>();
-    private List<Material> achievementMaterials = new List<Material>();
+    private List<List<Image>> achievementImages = new List<List<Image>>(); // 改为存储每个成就的所有Image组件
+    private List<List<Material>> achievementMaterials = new List<List<Material>>(); // 改为存储每个成就的所有Material
     [SerializeField] private int n = 0;
     private HashSet<int> activatedAchievements = new HashSet<int>();
 
@@ -38,27 +38,40 @@ public class HandSortAchieveSystem : MonoBehaviour
             // 检查子物体名称是否为纯数字
             if (int.TryParse(child.name, out int number))
             {
-                Image image = child.GetComponent<Image>();
-                if (image != null)
+                // 获取该数字物体下所有的Image组件（包括子物体）
+                Image[] images = child.GetComponentsInChildren<Image>(true);
+                if (images.Length > 0)
                 {
-                    achievementImages.Add(image);
-                    n++;
-
-                    // 实例化材质
-                    Material material = new Material(Shader.Find("Unlit/ShaderForUI"));
-                    image.material = material;
-                    achievementMaterials.Add(material);
+                    List<Image> imageList = new List<Image>();
+                    List<Material> materialList = new List<Material>();
                     
-                    // 设置初始饱和度
-                    material.SetFloat("_Saturation", 0f);
+                    foreach (Image image in images)
+                    {
+                        imageList.Add(image);
+                        
+                        // 实例化材质
+                        Material material = new Material(Shader.Find("Unlit/ShaderForUI"));
+                        image.material = material;
+                        materialList.Add(material);
+                        
+                        // 设置初始饱和度
+                        material.SetFloat("_Saturation", 0f);
+                    }
+                    
+                    achievementImages.Add(imageList);
+                    achievementMaterials.Add(materialList);
+                    n++;
                 }
             }
         }
 
         // 初始化所有成就图标为半透明
-        foreach (Image image in achievementImages)
+        foreach (var imageList in achievementImages)
         {
-            SetImageAlpha(image, defaultAlpha);
+            foreach (Image image in imageList)
+            {
+                SetImageAlpha(image, defaultAlpha);
+            }
         }
     }
 
@@ -84,9 +97,15 @@ public class HandSortAchieveSystem : MonoBehaviour
         // 记录已激活的成就
         activatedAchievements.Add(achievementNumber);
 
-        Image targetImage = achievementImages[achievementNumber - 1];
-        Material targetMaterial = achievementMaterials[achievementNumber - 1];
-        StartCoroutine(TransitionToColorful(targetImage, targetMaterial));
+        // 获取该成就的所有Image和Material
+        List<Image> targetImages = achievementImages[achievementNumber - 1];
+        List<Material> targetMaterials = achievementMaterials[achievementNumber - 1];
+
+        // 为每个Image启动过渡效果
+        for (int i = 0; i < targetImages.Count; i++)
+        {
+            StartCoroutine(TransitionToColorful(targetImages[i], targetMaterials[i]));
+        }
     }
 
     private IEnumerator TransitionToColorful(Image image, Material material)
