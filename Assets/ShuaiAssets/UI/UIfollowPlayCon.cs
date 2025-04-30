@@ -5,8 +5,10 @@ public class UIfollowPlayCon : MonoBehaviour
     public GameObject playerCenterpoint;
     public GameObject uifollowpoint1;
     public GameObject uifollowpoint2;
+    public GameObject uifollowpoint3;
     public GameObject needfollowui1;
     public GameObject needfollowui2;
+    public GameObject needfollowui3;
     [SerializeField]
     private float hightoffset = 0.2f;
 
@@ -29,6 +31,12 @@ public class UIfollowPlayCon : MonoBehaviour
         if (needfollowui2 != null && needfollowui2.activeSelf && uifollowpoint2 != null)
         {
             UpdateUIPositionAndRotation(needfollowui2, uifollowpoint2);
+        }
+
+        // 更新needfollowui3的位置和旋转
+        if (needfollowui3 != null && needfollowui3.activeSelf && uifollowpoint3 != null)
+        {
+            UpdateUIPositionAndRotation(needfollowui3, uifollowpoint3);
         }
     }
 
