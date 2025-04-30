@@ -1,0 +1,2551 @@
+fileFormatVersion: 2
+guid: db5d608a7e66fef46bf06cc7465befa7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 987
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8ae92db47baaf4282d25160a1f5d86
+      internalID: -2114087107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1007
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d400b2ee3b8ad45b4ae5e5a42ce509
+      internalID: -928113916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1001
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52977115f1a7d0b43b1dd99d321ce52f
+      internalID: 47552882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1002
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2313221e105ad248a734bdadf540067
+      internalID: -1492999104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1008
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f9c66e2c1a1d24d9510806887749d4
+      internalID: 607243992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1002
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e277068dae55294ea64248bd40850ab
+      internalID: -1913334029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1002
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eeeaf214935bc54d96141ca6e07b0d4
+      internalID: 1528057027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 991
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b02f6a352e1360478302255a3df44da
+      internalID: -941617874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_8
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1008
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469453c2ccb337949a6ca9d69c118d10
+      internalID: -1017696940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_9
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1014
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d36fdbedec6bc4ebc5a5ef6831d1e9
+      internalID: 202431010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_10
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1014
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d614f34bc56dc6a40bc3d28ee1de093b
+      internalID: -1121663885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_11
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85faf546a8115df41827623ac47da994
+      internalID: -1089040765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_12
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1002
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d390bc8b4f8f144ca239208e5e6e109
+      internalID: 1516958023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_13
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1014
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740296dc99feb5b4cb3115ab4063ac13
+      internalID: 1471294954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_14
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1013
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45aa62ddbbd439e41a3b16ab79ff7816
+      internalID: -1952742595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_15
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 972
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c15f412a3f681e4ca0bc14b464b7fdb
+      internalID: 1552896233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_16
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 992
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9188a3b05f9d294eac482ce24fecaee
+      internalID: -333331738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 981
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdba338fb2a9b848a1adabd0d131fef
+      internalID: 1701446439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_18
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 984
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04beedb2e7108249bd960e6306f981d
+      internalID: -246049584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_19
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 995
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d94ff7c2e25104497d52320966180d
+      internalID: 910786398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 980
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2976b6d70b0a7e84abfdd0f8c1921d80
+      internalID: -2044558956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_21
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 978
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7ad75ea87635f43a25dd7a0931b1db
+      internalID: -887603426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_22
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 979
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80dee6b74b7d1084daa91f5c4ab28e54
+      internalID: -916663639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_23
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 984
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33c622e01483f74594b8d3f9a414beb
+      internalID: 548488343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_24
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 984
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21a8421df2889146b34404b5ce0fa36
+      internalID: 725081338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_25
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 978
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c2fab657a806e41ba95be2e3035172
+      internalID: 1672382761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_26
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 986
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01633299964335c43a25b33d39a18bdd
+      internalID: -391859171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 964
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0382a8477d0504b8c961830896f804
+      internalID: 1011748285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 962
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349f9d30f2ed5fb4eb775c62a72f2101
+      internalID: 41247204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_29
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 966
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72328f5ac81f5840b43e90682b56978
+      internalID: -942227591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_30
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 972
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2d9b8816951c844b988afbbbe99f58
+      internalID: -1424062083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_31
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 972
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b56f4009e18614080f6074104786b7
+      internalID: 2060804105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_32
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 972
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398e96f308b292d4fbe0e19363f4bd9d
+      internalID: 729694610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_33
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 960
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d155c9b259e5f844850cfad35822ea5
+      internalID: -1345163896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_34
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 967
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b221173fff63cd449bc22c38c7f37e99
+      internalID: 543801193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_35
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 961
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22c348d74b9ec54c8ac41e36b62b8db
+      internalID: -825191228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_36
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 963
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1045be721086ae4db15338b11a04887
+      internalID: 1635393633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_37
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 947
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b50ea3a9a8dee940b6ae6e44dbd2976
+      internalID: 1984627530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 956
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d45dd0e3567014aa37ba2d5e6db5b8
+      internalID: -1338179394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_39
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 954
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4fa91258102054a9b7e9a5452f83cc
+      internalID: -1150346196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_40
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 955
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd934722c5c99840b8b160d9162208e
+      internalID: -139221290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_41
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 933
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614b16d2bc9dc6c49b0cfa1076e9ad76
+      internalID: -1641742673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_42
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 953
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95004c145f94e3b4c8b3c36f8fe06459
+      internalID: -628912780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_43
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 947
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0abf5b756209b4428cda28afea5b9fe
+      internalID: 714671710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_44
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 930
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af585727ae6cd64bb131f94831e5a77
+      internalID: 252876096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_45
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 939
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da5bea704015104a92d182db1ce1f18
+      internalID: -209169471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_46
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 939
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e372ad5d03736d429107c5347df3cb6
+      internalID: -1954311864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_47
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 933
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152fceba4e31c4b4e82c3d14f6077e3f
+      internalID: 1743727552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_48
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 114
+        width: 812
+        height: 829
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec262c33bf5ab214f8f5180fd8e86937
+      internalID: -1395986077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_49
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 925
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f75231357a9f6f43ad3bb3acc9e64e0
+      internalID: -1764102809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_50
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 926
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5a56c0c5ae4444f927402fb6cfa2e9
+      internalID: -669368358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_51
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 115
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033e173456b897a48a360283960aef73
+      internalID: 1299535116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 83
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d681cbd5b20baba4793c8a6bdafdb1c4
+      internalID: 820768868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_53
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 86
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96925b97c8744e14b8b7537371539032
+      internalID: 49191969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_54
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 93
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a180beba6420e2946868bee504261d54
+      internalID: 2101440218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_56
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 84
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd03dc58b8ef7d4999334e5492d6c8e
+      internalID: -378789054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195c67d7084a1a544a85107fc917f611
+      internalID: -1572382235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 26
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0c7342a9815b047b97d8db370b9efd
+      internalID: 1530154048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_60
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 75
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedd764935223494e9ddfc06cb33f1bc
+      internalID: 877829935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_61
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 66
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7788121fcdc6c49bae1a03e7bc2372
+      internalID: -791240457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_62
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 72
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db7f91a62867234681017857228b491
+      internalID: -121178492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_63
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 65
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfeb4b25c4e31b408f7cbb4fcd92824
+      internalID: 1266491552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_64
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 75
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8db05387300d23449e6aaa311d546ee
+      internalID: -1480638085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_65
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 75
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48da8170e7c105049924a7b28bee0419
+      internalID: -235265753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_66
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 68
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ccb1990c2f67a4fa02ce7f160d081a
+      internalID: -141871115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_67
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 67
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3138603ddbd6803489142e362ee86803
+      internalID: -2141938704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_68
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 82
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed9c07fe13ed0b4389e6aee77d70d4f
+      internalID: -1390127151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088690646d482164aa485d4785808eaf
+      internalID: -955766468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_70
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 55
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ea4bcf988e2904baa5156eff4d721f
+      internalID: 1347552107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_71
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 65
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a65dc9e8c8ae742b4189d086c7ff45
+      internalID: 1511678137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_72
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 68
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c9d3d76893ca847bdfdf62afa03755
+      internalID: 1083610164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_74
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 40
+        width: 49
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a477cb811c60f5545bbcbebb35549b65
+      internalID: 2066695865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_75
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 61
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f3e6c5255c6014da6bc7c1b3d57b73
+      internalID: -585459046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_76
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 60
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3003f09bc43e3474d9c00b98cd054c0f
+      internalID: 1942652566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_77
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 56
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b63db0b5eb296439a08096f8519d42
+      internalID: -1675362073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_78
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 19
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f7d28d99612f44fa53b5f003bb2028
+      internalID: 1327926098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_79
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 48
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f5f543f2ed7b14e9794b884237759e
+      internalID: 2102500860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_81
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 27
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75c6fd0120174f4690a278a6bef9464
+      internalID: 1757821471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_82
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e1bdc63eb811d46a48bb3c7422a4e3
+      internalID: -1465476379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_83
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 34
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6cab9ea63159e4dbf68a4ecfa06200
+      internalID: -1551926075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_84
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 26
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd020a01afe702e42988a18423303440
+      internalID: 1882340133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_85
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 26
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c974687dde0b94c96e4ff5c8ac7a5a
+      internalID: 1225591741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3f37831399f5f47896002093985046
+      internalID: -2095332830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_87
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 24
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec94ae77f51ab2438cdc1da575a999a
+      internalID: -1241166426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_88
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 19
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bea595132b6444cb8cdd67083a5c5e
+      internalID: 1273909969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_89
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 19
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455b098ee4405b94880fce7214b2fef5
+      internalID: 352295619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_90
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 28
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f9af8a926e42040bde364feb380a2e
+      internalID: -1695746402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_91
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 17
+        width: 38
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2324841cf64d4ea4ba5dc0f0b010ad35
+      internalID: -1054083063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_92
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 6
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93483f8cd28e8a14892ed7e322e2520f
+      internalID: -979297966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_93
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 13
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd33175e5deef44380047bb9911b7ef
+      internalID: -366316636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_94
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 19
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207bd4e1c8145fe41804d10144784a95
+      internalID: -1558308777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_95
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 11
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c593ee016aa9fa942aed89abc76973de
+      internalID: -1596803620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d322ef8c79f379340b612bc7798993a6
+      internalID: 663244761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_97
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 11
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024b17f95377c9d44b1921932708df8e
+      internalID: 590606227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_98
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d8377072785c34db66b49f0ba4ccb2
+      internalID: -1548447061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_99
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 12
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12bb51d8048d40498a959797b5db2fa
+      internalID: 1767023635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_100
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610266699efd9cd4d9f7a8dc554bceb7
+      internalID: 1333098443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_101
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 0
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e9f8df6ed55aa4286d7296a9823393
+      internalID: -867428659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_102
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 11
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba1eee6de7b1854f9b3be15a598696d
+      internalID: 174514769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_104
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65d88cee4661f04394fe2a4b1a43466
+      internalID: -2138835212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_105
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823923b218afa1b48b1d18e1bbde9009
+      internalID: 391603794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_106
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a778bc95ed98b44cb7170f12cf4697c
+      internalID: -1826949233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_107
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc1c76ac22e02946828d9610641797f
+      internalID: -950922234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_108
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f11efe935206c94fb56b1eaaf08256e
+      internalID: -1959369161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnitedLazyPeopleLogo_109
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 3
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cb16445cb2261418505251039a1f0a
+      internalID: -1060086940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4126dcaa0a94f1c4b8f70150fba5e5d0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UnitedLazyPeopleLogo_0: -2114087107
+      UnitedLazyPeopleLogo_1: -928113916
+      UnitedLazyPeopleLogo_10: -1121663885
+      UnitedLazyPeopleLogo_100: 1333098443
+      UnitedLazyPeopleLogo_101: -867428659
+      UnitedLazyPeopleLogo_102: 174514769
+      UnitedLazyPeopleLogo_103: 1267275331
+      UnitedLazyPeopleLogo_104: -2138835212
+      UnitedLazyPeopleLogo_105: 391603794
+      UnitedLazyPeopleLogo_106: -1826949233
+      UnitedLazyPeopleLogo_107: -950922234
+      UnitedLazyPeopleLogo_108: -1959369161
+      UnitedLazyPeopleLogo_109: -1060086940
+      UnitedLazyPeopleLogo_11: -1089040765
+      UnitedLazyPeopleLogo_110: -718685617
+      UnitedLazyPeopleLogo_12: 1516958023
+      UnitedLazyPeopleLogo_13: 1471294954
+      UnitedLazyPeopleLogo_14: -1952742595
+      UnitedLazyPeopleLogo_15: 1552896233
+      UnitedLazyPeopleLogo_16: -333331738
+      UnitedLazyPeopleLogo_17: 1701446439
+      UnitedLazyPeopleLogo_18: -246049584
+      UnitedLazyPeopleLogo_19: 910786398
+      UnitedLazyPeopleLogo_2: 47552882
+      UnitedLazyPeopleLogo_20: -2044558956
+      UnitedLazyPeopleLogo_21: -887603426
+      UnitedLazyPeopleLogo_22: -916663639
+      UnitedLazyPeopleLogo_23: 548488343
+      UnitedLazyPeopleLogo_24: 725081338
+      UnitedLazyPeopleLogo_25: 1672382761
+      UnitedLazyPeopleLogo_26: -391859171
+      UnitedLazyPeopleLogo_27: 1011748285
+      UnitedLazyPeopleLogo_28: 41247204
+      UnitedLazyPeopleLogo_29: -942227591
+      UnitedLazyPeopleLogo_3: -1492999104
+      UnitedLazyPeopleLogo_30: -1424062083
+      UnitedLazyPeopleLogo_31: 2060804105
+      UnitedLazyPeopleLogo_32: 729694610
+      UnitedLazyPeopleLogo_33: -1345163896
+      UnitedLazyPeopleLogo_34: 543801193
+      UnitedLazyPeopleLogo_35: -825191228
+      UnitedLazyPeopleLogo_36: 1635393633
+      UnitedLazyPeopleLogo_37: 1984627530
+      UnitedLazyPeopleLogo_38: -1338179394
+      UnitedLazyPeopleLogo_39: -1150346196
+      UnitedLazyPeopleLogo_4: 607243992
+      UnitedLazyPeopleLogo_40: -139221290
+      UnitedLazyPeopleLogo_41: -1641742673
+      UnitedLazyPeopleLogo_42: -628912780
+      UnitedLazyPeopleLogo_43: 714671710
+      UnitedLazyPeopleLogo_44: 252876096
+      UnitedLazyPeopleLogo_45: -209169471
+      UnitedLazyPeopleLogo_46: -1954311864
+      UnitedLazyPeopleLogo_47: 1743727552
+      UnitedLazyPeopleLogo_48: -1395986077
+      UnitedLazyPeopleLogo_49: -1764102809
+      UnitedLazyPeopleLogo_5: -1913334029
+      UnitedLazyPeopleLogo_50: -669368358
+      UnitedLazyPeopleLogo_51: 1299535116
+      UnitedLazyPeopleLogo_52: 820768868
+      UnitedLazyPeopleLogo_53: 49191969
+      UnitedLazyPeopleLogo_54: 2101440218
+      UnitedLazyPeopleLogo_55: -1353362036
+      UnitedLazyPeopleLogo_56: -378789054
+      UnitedLazyPeopleLogo_57: 46183241
+      UnitedLazyPeopleLogo_58: -1572382235
+      UnitedLazyPeopleLogo_59: 1530154048
+      UnitedLazyPeopleLogo_6: 1528057027
+      UnitedLazyPeopleLogo_60: 877829935
+      UnitedLazyPeopleLogo_61: -791240457
+      UnitedLazyPeopleLogo_62: -121178492
+      UnitedLazyPeopleLogo_63: 1266491552
+      UnitedLazyPeopleLogo_64: -1480638085
+      UnitedLazyPeopleLogo_65: -235265753
+      UnitedLazyPeopleLogo_66: -141871115
+      UnitedLazyPeopleLogo_67: -2141938704
+      UnitedLazyPeopleLogo_68: -1390127151
+      UnitedLazyPeopleLogo_69: -955766468
+      UnitedLazyPeopleLogo_7: -941617874
+      UnitedLazyPeopleLogo_70: 1347552107
+      UnitedLazyPeopleLogo_71: 1511678137
+      UnitedLazyPeopleLogo_72: 1083610164
+      UnitedLazyPeopleLogo_73: 2110557543
+      UnitedLazyPeopleLogo_74: 2066695865
+      UnitedLazyPeopleLogo_75: -585459046
+      UnitedLazyPeopleLogo_76: 1942652566
+      UnitedLazyPeopleLogo_77: -1675362073
+      UnitedLazyPeopleLogo_78: 1327926098
+      UnitedLazyPeopleLogo_79: 2102500860
+      UnitedLazyPeopleLogo_8: -1017696940
+      UnitedLazyPeopleLogo_80: -552117527
+      UnitedLazyPeopleLogo_81: 1757821471
+      UnitedLazyPeopleLogo_82: -1465476379
+      UnitedLazyPeopleLogo_83: -1551926075
+      UnitedLazyPeopleLogo_84: 1882340133
+      UnitedLazyPeopleLogo_85: 1225591741
+      UnitedLazyPeopleLogo_86: -2095332830
+      UnitedLazyPeopleLogo_87: -1241166426
+      UnitedLazyPeopleLogo_88: 1273909969
+      UnitedLazyPeopleLogo_89: 352295619
+      UnitedLazyPeopleLogo_9: 202431010
+      UnitedLazyPeopleLogo_90: -1695746402
+      UnitedLazyPeopleLogo_91: -1054083063
+      UnitedLazyPeopleLogo_92: -979297966
+      UnitedLazyPeopleLogo_93: -366316636
+      UnitedLazyPeopleLogo_94: -1558308777
+      UnitedLazyPeopleLogo_95: -1596803620
+      UnitedLazyPeopleLogo_96: 663244761
+      UnitedLazyPeopleLogo_97: 590606227
+      UnitedLazyPeopleLogo_98: -1548447061
+      UnitedLazyPeopleLogo_99: 1767023635
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
