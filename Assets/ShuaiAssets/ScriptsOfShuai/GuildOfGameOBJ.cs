@@ -148,4 +148,36 @@ public class GuildOfGameOBJ : MonoBehaviour
             }
         }
     }
+
+    private void OnDisable()
+    {
+        if (!isInitialized) return;
+        
+        if (materials != null)
+        {
+            // 恢复默认发光强度为-10
+            float defaultIntensity = Mathf.Pow(2, minIntensity);
+            Color defaultColor = emissionColor * defaultIntensity;
+            foreach (var material in materials)
+            {
+                material.SetColor("_EmissionColor", defaultColor);
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (!isInitialized) return;
+        
+        if (materials != null)
+        {
+            // 恢复默认发光强度为-10
+            float defaultIntensity = Mathf.Pow(2, minIntensity);
+            Color defaultColor = emissionColor * defaultIntensity;
+            foreach (var material in materials)
+            {
+                material.SetColor("_EmissionColor", defaultColor);
+            }
+        }
+    }
 }

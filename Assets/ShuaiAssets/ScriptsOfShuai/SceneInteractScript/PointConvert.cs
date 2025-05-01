@@ -44,13 +44,13 @@ public class PointConvert : MonoBehaviour
         switch (currentType)
         {
             case ConvertType.月度电:
-                convertedValue = currentScore / 2;
+                convertedValue = (int)(0.8f * currentScore);
                 break;
             case ConvertType.碳排放:
-                convertedValue = currentScore * 2;
+                convertedValue = 45 * currentScore ;
                 break;
             case ConvertType.种树:
-                convertedValue = currentScore * 3;
+                convertedValue = (int)(1.8f * currentScore);
                 break;
         }
 
