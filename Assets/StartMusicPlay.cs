@@ -37,7 +37,12 @@ public class StartMusicPlay : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.Loaded:
+            case GameState.TutorialStart:
+            case GameState.Playing:
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
                 StartCoroutine(FadeVolume(targetVolume));
                 break;
             case GameState.GameOver:

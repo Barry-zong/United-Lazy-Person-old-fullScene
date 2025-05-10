@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Diagnostics;
+using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class EndingEvent : MonoBehaviour
 {
@@ -62,6 +67,11 @@ public class EndingEvent : MonoBehaviour
                 triggerCount++;
                 if (triggerCount >= requiredTriggerCount)
                 {
+                    // 设置游戏状态为已加载
+                    if (GameStateCenter.Instance != null)
+                    {
+                        GameStateCenter.Instance.SetGameState(GameState.Loaded);
+                    }
                     RestartScene();
                 }
             }
@@ -85,7 +95,19 @@ public class EndingEvent : MonoBehaviour
 
     private void RestartScene()
     {
-        // 完全重启游戏，加载第一个场景
-        SceneManager.LoadScene(0);
+        if (Application.isEditor)
+        {
+            // 在Unity编辑器中运行时，关闭游戏
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
+        else
+        {
+            // 在VR头显设备中运行时，完全重启游戏
+            string path = Process.GetCurrentProcess().MainModule.FileName;
+            Process.Start(path);
+            Application.Quit();
+        }
     }
 }

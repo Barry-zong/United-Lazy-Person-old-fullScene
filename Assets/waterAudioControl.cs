@@ -35,21 +35,36 @@ public class waterAudioControl : MonoBehaviour
     {
         if (audioSource == null) return;
 
-        switch (newState)
+        if(newState == GameState.Playing)
         {
-            case GameState.Playing:
-                if (GameStateCenter.Instance.CurrentState == GameState.Loaded)
-                {
-                    StartFadeVolume(targetVolume);
-                }
-                break;
-            case GameState.GameOver:
-                if (audioSource.volume > 0)
-                {
-                    StartFadeVolume(0f);
-                }
-                break;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+            StartFadeVolume(targetVolume);
         }
+        if(newState == GameState.GameOver)
+        {
+            StartFadeVolume(0f);
+        }
+
+
+
+        // switch (newState)
+        // {
+        //     case GameState.TutorialStart:
+        //     case GameState.Playing:
+                
+        //             StartFadeVolume(targetVolume);
+                
+        //         break;
+        //     case GameState.GameOver:
+        //         if (audioSource.volume > 0)
+        //         {
+        //             StartFadeVolume(0f);
+        //         }
+        //         break;
+        // }
     }
 
     private void StartFadeVolume(float target)

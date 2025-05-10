@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -57,6 +58,26 @@ public class CountdownTimer : MonoBehaviour
         _instance = this;
         
         // 初始化计时器状态
+        ResetTimerState();
+        
+        // 添加场景加载事件监听
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        // 移除场景加载事件监听
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 场景加载时重置计时器状态
+        ResetTimerState();
+    }
+
+    private void ResetTimerState()
+    {
         timeRemaining = totalTime;
         isRunning = false;
         isTimerFinished = false;
@@ -77,9 +98,15 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
-        // 只有在游戏状态为Playing时才更新计时器
-        if (isRunning && GameStateCenter.Instance != null && GameStateCenter.Instance.IsState(GameState.Playing))
+        // 检查游戏状态是否为Playing
+        if (GameStateCenter.Instance != null && GameStateCenter.Instance.IsState(GameState.Playing))
         {
+            // 如果游戏状态为Playing但计时器未运行，则启动计时器
+            if (!isRunning)
+            {
+                StartTimer();
+            }
+
             if (timeRemaining > 0)
             {
                 // 每帧减少时间

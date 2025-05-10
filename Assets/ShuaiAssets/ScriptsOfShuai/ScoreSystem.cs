@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ScoreSystem : MonoBehaviour
 
     [Header("Audio Settings")]
     [SerializeField] private AudioSource scoreAudioSource; // 音频源组件
+    
 
     // 分数变量，后续会使用NetworkVariable
     private int currentScore = 0;
@@ -25,6 +27,8 @@ public class ScoreSystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+           
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -33,8 +37,21 @@ public class ScoreSystem : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ResetScore();
+    }
+
     private void Start()
     {
+        // 重置分数
+        ResetScore();
+
         // 确保设置了TextMeshPro组件
         if (scoreText == null)
         {
@@ -122,5 +139,12 @@ public class ScoreSystem : MonoBehaviour
         {
             scoreAudioSource.Play();
         }
+    }
+
+    // 重置分数方法
+    public void ResetScore()
+    {
+        currentScore = 0;
+        canAddScore = true;
     }
 }

@@ -5,6 +5,7 @@ public enum GameState
 {
     Loading,        // 游戏加载中
     Loaded,         // 游戏加载完成
+    TutorialStart,  // 教程开始
     Playing,        // 游戏进行中
     GameOver        // 游戏结束
 }
@@ -61,6 +62,7 @@ public class GameStateCenter : MonoBehaviour
     // 状态切换方法
     public void SetGameState(GameState newState)
     {
+        Debug.Log($"游戏状态从 {CurrentState} 变更为 {newState}");
         CurrentState = newState;
     }
 
@@ -81,6 +83,22 @@ public class GameStateCenter : MonoBehaviour
     {
         // 取消注册场景加载完成事件
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        
+        // 清理单例实例
+        if (_instance == this)
+        {
+            _instance = null;
+        }
+    }
+
+    // 添加静态清理方法
+    public static void Cleanup()
+    {
+        if (_instance != null)
+        {
+            Destroy(_instance.gameObject);
+            _instance = null;
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -94,6 +112,8 @@ public class GameStateCenter : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        // 当场景开始加载时，设置状态为Loading
+        SetGameState(GameState.Loading);
     }
 
     private void OnDisable()
