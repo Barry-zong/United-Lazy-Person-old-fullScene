@@ -35,10 +35,6 @@ public class CountdownTimer : MonoBehaviour
     [Tooltip("用于显示倒计时的TextMeshPro组件")]
     public TMP_Text countdownText;
 
-    [Header("音频设置")]
-    [Tooltip("倒计时结束时需要关闭的音频源")]
-    public AudioSource musicToStop;
-
     [Header("游戏对象设置")]
     [Tooltip("倒计时结束时需要禁用的传送点")]
     public GameObject teleport;
@@ -72,12 +68,17 @@ public class CountdownTimer : MonoBehaviour
         // 初始化倒计时
         timeRemaining = totalTime;
         UpdateTimerDisplay();
-        StartTimer();
+        // 只有在游戏状态为Playing时才开始计时
+        if (GameStateCenter.Instance != null && GameStateCenter.Instance.IsState(GameState.Playing))
+        {
+            StartTimer();
+        }
     }
 
     void Update()
     {
-        if (isRunning)
+        // 只有在游戏状态为Playing时才更新计时器
+        if (isRunning && GameStateCenter.Instance != null && GameStateCenter.Instance.IsState(GameState.Playing))
         {
             if (timeRemaining > 0)
             {
@@ -136,6 +137,12 @@ public class CountdownTimer : MonoBehaviour
         isRunning = false;
         isTimerFinished = true;
 
+        // 设置游戏状态为GameOver
+        if (GameStateCenter.Instance != null)
+        {
+            GameStateCenter.Instance.SetGameState(GameState.GameOver);
+        }
+
         // 禁用传送点
         if (teleport != null)
         {
@@ -149,13 +156,6 @@ public class CountdownTimer : MonoBehaviour
             Debug.Log("传送点2已禁用");
         }
 
-        // 关闭指定音频
-        if (musicToStop != null)
-        {
-            musicToStop.Stop();
-            Debug.Log("音乐已停止播放");
-        }
-
         // 在这里添加倒计时结束时需要执行的逻辑
         Debug.Log("倒计时结束");
     }
@@ -164,5 +164,11 @@ public class CountdownTimer : MonoBehaviour
     {
         timeRemaining = time;
         UpdateTimerDisplay();
+    }
+
+    // 获取剩余时间
+    public float GetRemainingTime()
+    {
+        return timeRemaining;
     }
 }
