@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StartTutorioManager : MonoBehaviour
 {
+    public GameObject RemindText;
     public GameObject tutorialUI1;
     public GameObject tutorialUI2;
     public GameObject tutorialUI3;
@@ -11,10 +12,12 @@ public class StartTutorioManager : MonoBehaviour
     
     private bool hasTriggered = false;
     private int currentTutorialIndex = 0;
-    private float cooldownTime = 2f;
+    private float cooldownTime = 5f;
     private float transitionTime = 1.5f;
     private bool isInTransition = false;
     private float lastTriggerTime = 0f;
+    private Vector3 initialRemindTextScale;
+    private Coroutine remindTextCoroutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +25,12 @@ public class StartTutorioManager : MonoBehaviour
         // 注册游戏状态改变事件
         GameStateCenter.Instance.OnGameStateChanged += HandleGameStateChanged;
         InitializeUIState();
+        
+        // 记录RemindText的初始scale
+        if (RemindText != null)
+        {
+            initialRemindTextScale = RemindText.transform.localScale;
+        }
     }
 
     void OnDestroy()
@@ -92,8 +101,23 @@ public class StartTutorioManager : MonoBehaviour
         {
             lastTriggerTime = Time.time;
             GameStateCenter.Instance.SetGameState(GameState.TutorialStart);
+            
+            // 分别启动两个独立的协程
             StartCoroutine(TransitionToNextTutorial());
+            HandleRemindTextAnimation();
         }
+    }
+
+    private void HandleRemindTextAnimation()
+    {
+        // 停止之前的动画协程（如果有）
+        if (remindTextCoroutine != null)
+        {
+            StopCoroutine(remindTextCoroutine);
+        }
+        
+        // 开始新的动画协程
+        remindTextCoroutine = StartCoroutine(AnimateRemindText());
     }
 
     private IEnumerator TransitionToNextTutorial()
@@ -161,6 +185,41 @@ public class StartTutorioManager : MonoBehaviour
             case 3: return tutorialUI4;
             case 4: return tutorialUI5;
             default: return null;
+        }
+    }
+
+    private IEnumerator AnimateRemindText()
+    {
+        if (RemindText == null) yield break;
+
+        // 从当前scale过渡到0
+        float elapsedTime = 0f;
+        Vector3 startScale = RemindText.transform.localScale;
+        
+        while (elapsedTime < 2f)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / 2f;
+            RemindText.transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
+            yield return null;
+        }
+
+        // 等待冷却时间
+        float waitTime = cooldownTime - 2f;
+        while (waitTime > 0)
+        {
+            waitTime -= Time.deltaTime;
+            yield return null;
+        }
+
+        // 从0过渡回初始scale
+        elapsedTime = 0f;
+        while (elapsedTime < 1f)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / 1f;
+            RemindText.transform.localScale = Vector3.Lerp(Vector3.zero, initialRemindTextScale, t);
+            yield return null;
         }
     }
 }
