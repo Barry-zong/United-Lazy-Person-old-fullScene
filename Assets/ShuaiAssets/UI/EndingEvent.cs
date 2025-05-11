@@ -104,10 +104,11 @@ public class EndingEvent : MonoBehaviour
         }
         else
         {
-            // 在VR头显设备中运行时，完全重启游戏
-            string path = Process.GetCurrentProcess().MainModule.FileName;
-            Process.Start(path);
+            // 在VR头显设备中运行时，强制退出游戏
             Application.Quit();
+            #if UNITY_STANDALONE_WIN
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            #endif
         }
     }
 }
