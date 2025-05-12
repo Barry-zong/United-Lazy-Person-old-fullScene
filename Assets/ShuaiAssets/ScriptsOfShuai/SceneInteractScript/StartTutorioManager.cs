@@ -10,14 +10,25 @@ public class StartTutorioManager : MonoBehaviour
     public GameObject tutorialUI4;
     public GameObject tutorialUI5;
     
+    [Header("教程步骤之间的自动触发时间（秒）")]
+    [Tooltip("第一个到第二个UI的等待时间")]
+    [SerializeField] private float firstToSecondTime = 5f;
+    [Tooltip("第二个到第三个UI的等待时间")]
+    [SerializeField] private float secondToThirdTime = 30f;
+    [Tooltip("第三个到第四个UI的等待时间")]
+    [SerializeField] private float thirdToFourthTime = 20f;
+    
     private bool hasTriggered = false;
+    private bool isFirstTrigger = true;
     private int currentTutorialIndex = 0;
-    private float cooldownTime = 5f;
+    private float cooldownTime = 4f;
     private float transitionTime = 1.5f;
     private bool isInTransition = false;
     private float lastTriggerTime = 0f;
     private Vector3 initialRemindTextScale;
     private Coroutine remindTextCoroutine;
+    private Coroutine autoTriggerCoroutine;
+    private GameObject currentActiveUI;  // 当前活动的UI对象
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +51,19 @@ public class StartTutorioManager : MonoBehaviour
         {
             GameStateCenter.Instance.OnGameStateChanged -= HandleGameStateChanged;
         }
+        
+        // 停止所有协程
+        if (autoTriggerCoroutine != null)
+        {
+            StopCoroutine(autoTriggerCoroutine);
+        }
+        
+        // 清理所有UI对象
+        if (tutorialUI1 != null) Destroy(tutorialUI1);
+        if (tutorialUI2 != null) Destroy(tutorialUI2);
+        if (tutorialUI3 != null) Destroy(tutorialUI3);
+        if (tutorialUI4 != null) Destroy(tutorialUI4);
+        if (tutorialUI5 != null) Destroy(tutorialUI5);
     }
 
     void HandleGameStateChanged(GameState newState)
@@ -53,21 +77,23 @@ public class StartTutorioManager : MonoBehaviour
 
     private void InitializeUIState()
     {
-        // 初始化所有UI的scale为0
+        // 确保所有UI对象都是激活的，但scale为0
+        tutorialUI1.SetActive(true);
+        tutorialUI2.SetActive(true);
+        tutorialUI3.SetActive(true);
+        tutorialUI4.SetActive(true);
+        tutorialUI5.SetActive(true);
+        
+        // 设置所有UI的scale为0
+        tutorialUI1.transform.localScale = Vector3.zero;
         tutorialUI2.transform.localScale = Vector3.zero;
         tutorialUI3.transform.localScale = Vector3.zero;
         tutorialUI4.transform.localScale = Vector3.zero;
         tutorialUI5.transform.localScale = Vector3.zero;
         
-        // 设置tutorialUI1的scale为1
-        tutorialUI1.transform.localScale = Vector3.one;
-        
         // 设置初始UI状态
-        tutorialUI1.SetActive(true);
-        tutorialUI2.SetActive(false);
-        tutorialUI3.SetActive(false);
-        tutorialUI4.SetActive(false);
-        tutorialUI5.SetActive(false);
+        currentActiveUI = tutorialUI1;
+        tutorialUI1.transform.localScale = Vector3.one;
     }
 
     private void SetAllUIScale(Vector3 scale)
@@ -81,12 +107,16 @@ public class StartTutorioManager : MonoBehaviour
 
     private void ResetAllUI()
     {
-        SetAllUIScale(Vector3.zero);
+        // 销毁所有非第一个UI
+        if (tutorialUI2 != null) Destroy(tutorialUI2);
+        if (tutorialUI3 != null) Destroy(tutorialUI3);
+        if (tutorialUI4 != null) Destroy(tutorialUI4);
+        if (tutorialUI5 != null) Destroy(tutorialUI5);
+        
+        // 重置第一个UI
         tutorialUI1.SetActive(true);
-        tutorialUI2.SetActive(false);
-        tutorialUI3.SetActive(false);
-        tutorialUI4.SetActive(false);
-        tutorialUI5.SetActive(false);
+        tutorialUI1.transform.localScale = Vector3.one;
+        currentActiveUI = tutorialUI1;
     }
 
     // Update is called once per frame
@@ -97,14 +127,24 @@ public class StartTutorioManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand") && !isInTransition && Time.time - lastTriggerTime >= cooldownTime)
+        if (other.CompareTag("Hand") && !isInTransition && (isFirstTrigger || Time.time - lastTriggerTime >= cooldownTime))
         {
             lastTriggerTime = Time.time;
+            isFirstTrigger = false;  // 设置标志为false，表示已经不是第一次触发了
             GameStateCenter.Instance.SetGameState(GameState.TutorialStart);
+            
+            // 停止之前的自动触发协程（如果存在）
+            if (autoTriggerCoroutine != null)
+            {
+                StopCoroutine(autoTriggerCoroutine);
+            }
             
             // 分别启动两个独立的协程
             StartCoroutine(TransitionToNextTutorial());
             HandleRemindTextAnimation();
+            
+            // 启动新的自动触发协程
+            autoTriggerCoroutine = StartCoroutine(AutoTriggerNextTutorial());
         }
     }
 
@@ -137,12 +177,17 @@ public class StartTutorioManager : MonoBehaviour
                 currentUI.transform.localScale = new Vector3(scale, scale, scale);
                 yield return null;
             }
-            currentUI.SetActive(false);
+            
+            // 销毁当前UI
+            if (currentUI != tutorialUI1)  // 保持第一个UI始终存在
+            {
+                Destroy(currentUI);
+            }
         }
 
         if (nextUI != null)
         {
-            // 开启下一个UI
+            // 确保下一个UI是激活的
             nextUI.SetActive(true);
             float elapsedTime = 0f;
             while (elapsedTime < transitionTime)
@@ -152,6 +197,7 @@ public class StartTutorioManager : MonoBehaviour
                 nextUI.transform.localScale = new Vector3(scale, scale, scale);
                 yield return null;
             }
+            currentActiveUI = nextUI;
         }
         else
         {
@@ -220,6 +266,37 @@ public class StartTutorioManager : MonoBehaviour
             float t = elapsedTime / 1f;
             RemindText.transform.localScale = Vector3.Lerp(Vector3.zero, initialRemindTextScale, t);
             yield return null;
+        }
+    }
+
+    private IEnumerator AutoTriggerNextTutorial()
+    {
+        // 获取当前步骤的自动触发时间
+        float currentAutoTriggerTime = GetCurrentAutoTriggerTime();
+        
+        // 等待指定的自动触发时间
+        yield return new WaitForSeconds(currentAutoTriggerTime);
+        
+        // 如果当前不在过渡状态，则自动触发下一次
+        if (!isInTransition)
+        {
+            GameStateCenter.Instance.SetGameState(GameState.TutorialStart);
+            StartCoroutine(TransitionToNextTutorial());
+            HandleRemindTextAnimation();
+            
+            // 重新启动自动触发协程
+            autoTriggerCoroutine = StartCoroutine(AutoTriggerNextTutorial());
+        }
+    }
+
+    private float GetCurrentAutoTriggerTime()
+    {
+        switch (currentTutorialIndex)
+        {
+            case 0: return firstToSecondTime;
+            case 1: return secondToThirdTime;
+            case 2: return thirdToFourthTime;
+            default: return 15f; // 默认返回15秒
         }
     }
 }

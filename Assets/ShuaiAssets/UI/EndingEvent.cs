@@ -21,7 +21,7 @@ public class EndingEvent : MonoBehaviour
     [SerializeField ]
     private float doubleTriggerThreshold = 2f; // 两次触发的最大时间间隔
     [SerializeField ]
-    private int requiredTriggerCount = 4; // 需要触发的次数
+    private int requiredTriggerCount = 6; // 需要触发的次数
 
     // 添加手部交互相关变量
     private float handTriggerCooldown = 0.5f; // 手部交互冷却时间
