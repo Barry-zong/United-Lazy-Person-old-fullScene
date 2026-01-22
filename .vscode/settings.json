@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "VrMultyPlayerLearningProject.sln"
+    "dotnet.defaultSolution": "United-Lazy-Person-old-fullScene.slnx"
 }
