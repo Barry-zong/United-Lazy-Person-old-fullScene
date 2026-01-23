@@ -1977,7 +1977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1579911787077066357, guid: c1cc8197c4a5a4844aff6cf2c4f8fc12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.3
+      value: -13.758
       objectReference: {fileID: 0}
     - target: {fileID: 1579911787077066357, guid: c1cc8197c4a5a4844aff6cf2c4f8fc12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1985,7 +1985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1579911787077066357, guid: c1cc8197c4a5a4844aff6cf2c4f8fc12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.92
+      value: -1.912
       objectReference: {fileID: 0}
     - target: {fileID: 1579911787077066357, guid: c1cc8197c4a5a4844aff6cf2c4f8fc12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10092,6 +10092,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 971879800}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &269255939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11216,6 +11217,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1455283016}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &292103273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13643,6 +13645,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &337042566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14978,6 +14981,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1624319057}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &361583103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17534,6 +17538,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1730258033}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &420079022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19573,6 +19578,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1365957255}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &464978144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23924,6 +23930,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2008048035}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &568923202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24564,6 +24571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _areaName: Non Walkable
+  _agentIndex: 0
   _snapDistance: 0
   _voxelSize: 0.01
   _calculateNormals: 0
@@ -26852,6 +26860,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1178647389}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &635811361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28643,6 +28652,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 705465974}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &681168594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28910,6 +28920,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &686609832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33261,6 +33272,7 @@ MonoBehaviour:
   _teleportArc: {fileID: 774891551}
   _equalDistanceThreshold: 0.1
   _hmd: {fileID: 774891550}
+  _context: {fileID: 0}
 --- !u!114 &774891550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33872,6 +33884,7 @@ MonoBehaviour:
   _teleportArc: {fileID: 778758182}
   _equalDistanceThreshold: 0.1
   _hmd: {fileID: 778758180}
+  _context: {fileID: 0}
 --- !u!114 &778758184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37658,6 +37671,7 @@ MonoBehaviour:
   - {fileID: 774891549}
   - {fileID: 120749049}
   _handler: {fileID: 1419492704}
+  _handlers: []
 --- !u!1 &880715074
 GameObject:
   m_ObjectHideFlags: 0
@@ -45182,6 +45196,7 @@ MonoBehaviour:
   _teleportArc: {fileID: 1030658177}
   _equalDistanceThreshold: 0.1
   _hmd: {fileID: 1030658176}
+  _context: {fileID: 0}
 --- !u!114 &1030658176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45812,6 +45827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ovrCameraRig: {fileID: 2060733640}
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
   _requireOvrHands: 1
 --- !u!114 &1038299413
 MonoBehaviour:
@@ -48009,7 +48026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5737975004233193054, guid: 4820bd212caa49e4d9de39f754faee98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.039999
+      value: -14.291
       objectReference: {fileID: 0}
     - target: {fileID: 5737975004233193054, guid: 4820bd212caa49e4d9de39f754faee98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -48017,7 +48034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5737975004233193054, guid: 4820bd212caa49e4d9de39f754faee98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.733991
+      value: -1.93
       objectReference: {fileID: 0}
     - target: {fileID: 5737975004233193054, guid: 4820bd212caa49e4d9de39f754faee98, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50160,6 +50177,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 436609466}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1135193184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54135,6 +54153,7 @@ MonoBehaviour:
   - {fileID: 778758183}
   - {fileID: 1291747943}
   _handler: {fileID: 1419492704}
+  _handlers: []
 --- !u!1 &1213721292
 GameObject:
   m_ObjectHideFlags: 0
@@ -55994,6 +56013,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 893907555}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1257528006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57201,6 +57221,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1025054882}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1285631113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58078,6 +58099,7 @@ MonoBehaviour:
   _teleportArc: {fileID: 1294623179}
   _equalDistanceThreshold: 0.1
   _hmd: {fileID: 1294623177}
+  _context: {fileID: 0}
 --- !u!114 &1294623181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59451,6 +59473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _areaName: Walkable
+  _agentIndex: 0
   _snapDistance: 0
   _voxelSize: 0.01
   _calculateNormals: 0
@@ -60787,6 +60810,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1354163854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64526,6 +64550,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1087287710}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1478715619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66152,6 +66177,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 326659953}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1524606033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66727,7 +66753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1539824400
 Transform:
   m_ObjectHideFlags: 0
@@ -67652,6 +67678,7 @@ MonoBehaviour:
   - {fileID: 1294623180}
   - {fileID: 156760988}
   _handler: {fileID: 1419492704}
+  _handlers: []
 --- !u!1 &1555659218
 GameObject:
   m_ObjectHideFlags: 0
@@ -69857,6 +69884,7 @@ MonoBehaviour:
   - {fileID: 1030658175}
   - {fileID: 1209910555}
   _handler: {fileID: 1419492704}
+  _handlers: []
 --- !u!1 &1631588980
 GameObject:
   m_ObjectHideFlags: 0
@@ -74256,6 +74284,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 343813270}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1718894930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82240,6 +82269,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1073639322}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1911270946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84954,6 +84984,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1790780470}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1973081390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85411,6 +85442,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1495901415}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &1984602144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87203,6 +87235,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1697237747}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &2014072916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88708,7 +88741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRecommendedMSAALevel: 1
   _monoscopic: 0
   _sharpenType: 0
   _enableDynamicResolution: 1
@@ -88763,6 +88795,7 @@ MonoBehaviour:
   requestEyeTrackingPermissionOnStartup: 0
   requestScenePermissionOnStartup: 1
   requestRecordAudioPermissionOnStartup: 0
+  requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
   _trackingOriginType: 1
   usePositionTracking: 1
@@ -88819,7 +88852,7 @@ Transform:
   m_GameObject: {fileID: 2060733637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: -7.759, y: 0, z: 1.728}
+  m_LocalPosition: {x: -10.522, y: 0, z: -0.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -90929,6 +90962,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1196323084}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &2107586792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91629,6 +91663,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4298279751695904432}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!114 &2117224535
 MonoBehaviour:
   m_ObjectHideFlags: 0
