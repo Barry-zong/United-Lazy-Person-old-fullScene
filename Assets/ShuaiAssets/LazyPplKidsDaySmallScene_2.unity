@@ -19796,7 +19796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9109304252753589671, guid: 42450e9e8eee7814e85df4a697256a5c, type: 3}
       propertyPath: m_Name
-      value: SceneManager
+      value: GameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
