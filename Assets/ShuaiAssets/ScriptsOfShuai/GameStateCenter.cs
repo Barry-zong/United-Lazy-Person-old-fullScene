@@ -56,7 +56,7 @@ public class GameStateCenter : MonoBehaviour
             return;
         }
         _instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // 状态切换方法

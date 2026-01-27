@@ -18,7 +18,7 @@ public class CountdownTimer : MonoBehaviour
                 {
                     GameObject go = new GameObject("CountdownTimer");
                     _instance = go.AddComponent<CountdownTimer>();
-                    DontDestroyOnLoad(go);
+                    //DontDestroyOnLoad(go);
                 }
             }
             return _instance;
