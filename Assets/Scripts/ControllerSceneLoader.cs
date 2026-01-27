@@ -2,17 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class ControllerSceneManager : MonoBehaviour
+public class ControllerSceneLoader : MonoBehaviour
 {
-    public static ControllerSceneManager Instance { get; private set; }
+    public static ControllerSceneLoader Instance { get; private set; }
 
     [Header("Scene names must match exactly what's in Build Settings")]
     [SerializeField] private string sceneX = "ShuaiAssets/LazyPplKidsDaySmallScene_1";
     [SerializeField] private string sceneY = "ShuaiAssets/LazyPplKidsDaySmallScene_2";
-
-    [Header("OVR Buttons")]
-    [SerializeField] private OVRInput.RawButton scene1Button = OVRInput.RawButton.X;
-    [SerializeField] private OVRInput.RawButton scene2Button = OVRInput.RawButton.Y;
 
     [Header("Optional")]
     [SerializeField] private LoadSceneMode loadMode = LoadSceneMode.Single;
@@ -32,10 +28,13 @@ public class ControllerSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetDown(scene1Button))
+        if (Keyboard.current == null)
+            return;
+
+        if (Keyboard.current.xKey.wasPressedThisFrame)
             Load(sceneX);
 
-        if (OVRInput.GetDown(scene2Button))
+        if (Keyboard.current.yKey.wasPressedThisFrame)
             Load(sceneY);
     }
 

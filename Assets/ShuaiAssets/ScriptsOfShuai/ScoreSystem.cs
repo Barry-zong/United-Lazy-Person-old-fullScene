@@ -24,19 +24,17 @@ public class ScoreSystem : MonoBehaviour
     private void Awake()
     {
         // 设置单例
-        Instance = this;
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        //if (Instance == null)
-        //{
-        //    Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
            
-        //    SceneManager.sceneLoaded += OnSceneLoaded;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     private void OnDestroy()
