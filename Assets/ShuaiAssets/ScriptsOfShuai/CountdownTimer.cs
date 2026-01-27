@@ -6,24 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
-    private static CountdownTimer _instance;
-    public static CountdownTimer Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindFirstObjectByType<CountdownTimer>();
-                if (_instance == null)
-                {
-                    GameObject go = new GameObject("CountdownTimer");
-                    _instance = go.AddComponent<CountdownTimer>();
-                    //DontDestroyOnLoad(go);
-                }
-            }
-            return _instance;
-        }
-    }
+    public static CountdownTimer Instance { get; private set; }
 
     [Header("计时器设置")]
     [Tooltip("设置计时总时间（秒）")]
@@ -50,24 +33,20 @@ public class CountdownTimer : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        _instance = this;
-        
+        Instance = this;
+
         // 初始化计时器状态
         ResetTimerState();
-        
+
         // 添加场景加载事件监听
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDestroy()
     {
-        // 移除场景加载事件监听
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (Instance == this)
+            Instance = null;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

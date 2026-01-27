@@ -12,23 +12,23 @@ public enum GameState
 
 public class GameStateCenter : MonoBehaviour
 {
-    private static GameStateCenter _instance;
-    public static GameStateCenter Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<GameStateCenter>();
-                if (_instance == null)
-                {
-                    GameObject go = new GameObject("GameStateCenter");
-                    _instance = go.AddComponent<GameStateCenter>();
-                }
-            }
-            return _instance;
-        }
-    }
+    //private static GameStateCenter _instance;
+    public static GameStateCenter Instance { get; private set; }
+    //{
+    //    get
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            _instance = FindObjectOfType<GameStateCenter>();
+    //            if (_instance == null)
+    //            {
+    //                GameObject go = new GameObject("GameStateCenter");
+    //                _instance = go.AddComponent<GameStateCenter>();
+    //            }
+    //        }
+    //        return _instance;
+    //    }
+    //}
 
     private GameState _currentState = GameState.Loading;
     public GameState CurrentState
@@ -50,12 +50,12 @@ public class GameStateCenter : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        _instance = this;
+        //if (_instance != null && _instance != this)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
+        Instance = this;
         //DontDestroyOnLoad(gameObject);
     }
 
@@ -85,21 +85,21 @@ public class GameStateCenter : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
         
         // 清理单例实例
-        if (_instance == this)
+        if (Instance == this)
         {
-            _instance = null;
+            Instance = null;
         }
     }
 
-    // 添加静态清理方法
-    public static void Cleanup()
-    {
-        if (_instance != null)
-        {
-            Destroy(_instance.gameObject);
-            _instance = null;
-        }
-    }
+    //// 添加静态清理方法
+    //public static void Cleanup()
+    //{
+    //    if (_instance != null)
+    //    {
+    //        Destroy(_instance.gameObject);
+    //        _instance = null;
+    //    }
+    //}
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
