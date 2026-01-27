@@ -41491,9 +41491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testScore: 0
-  growthDuration: 5
-  firstGrowthDuration: 7
-  growthDelay: 2
+  growthDuration: 7
+  firstGrowthDuration: 9
+  growthDelay: 0
 --- !u!1 &955993970
 GameObject:
   m_ObjectHideFlags: 0
@@ -56971,7 +56971,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: _startPosition.x
-      value: -4.48
+      value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
+      propertyPath: _startPosition.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: _leafSpawnProbability
@@ -57091,11 +57095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7154353910040246968, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.678
+      value: 6.18
       objectReference: {fileID: 0}
     - target: {fileID: 7154353910040246968, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.61
+      value: 8.22
       objectReference: {fileID: 0}
     - target: {fileID: 7549588842159698426, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: m_LocalPosition.x
