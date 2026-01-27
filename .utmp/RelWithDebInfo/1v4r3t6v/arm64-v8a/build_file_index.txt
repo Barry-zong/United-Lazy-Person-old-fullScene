@@ -1,0 +1,2 @@
+E:\GithubProjectRepository\United-Lazy-Person-old-fullScene\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+E:\GithubProjectRepository\United-Lazy-Person-old-fullScene\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
