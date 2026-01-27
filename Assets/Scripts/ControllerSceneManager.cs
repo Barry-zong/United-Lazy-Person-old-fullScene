@@ -1,21 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class ControllerSceneManager : MonoBehaviour
 {
     public static ControllerSceneManager Instance { get; private set; }
 
     [Header("Scene names must match exactly what's in Build Settings")]
-    [SerializeField] private string sceneX = "ShuaiAssets/LazyPplKidsDaySmallScene_1";
-    [SerializeField] private string sceneY = "ShuaiAssets/LazyPplKidsDaySmallScene_2";
+    [SerializeField] private string scene1 = "ShuaiAssets/LazyPplKidsDaySmallScene_1";
+    [SerializeField] private string scene2 = "ShuaiAssets/LazyPplKidsDaySmallScene_2";
 
     [Header("OVR Buttons")]
-    [SerializeField] private OVRInput.RawButton scene1Button = OVRInput.RawButton.X;
-    [SerializeField] private OVRInput.RawButton scene2Button = OVRInput.RawButton.Y;
+    [SerializeField] private OVRInput.RawButton sceneButton = OVRInput.RawButton.X;
 
     [Header("Optional")]
     [SerializeField] private LoadSceneMode loadMode = LoadSceneMode.Single;
+
+    private int currentSceneIndex = 0;
 
     private void Awake()
     {
@@ -32,11 +32,14 @@ public class ControllerSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetDown(scene1Button))
-            Load(sceneX);
-
-        if (OVRInput.GetDown(scene2Button))
-            Load(sceneY);
+        if (OVRInput.GetDown(sceneButton))
+        {
+            currentSceneIndex = 1 - currentSceneIndex; // Toggle between 0 and 1
+            if (currentSceneIndex == 0)
+                Load(scene1);
+            else
+                Load(scene2);
+        }
     }
 
     private void Load(string sceneName)

@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8350685382810199857}
   - component: {fileID: 742102130901749015}
+  - component: {fileID: 6748264809108320865}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9ff03d8e1bc194fb990e5957978f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneX: ShuaiAssets/LazyPplKidsDaySmallScene_1
-  sceneY: ShuaiAssets/LazyPplKidsDaySmallScene_2
+  scene1: ShuaiAssets/LazyPplKidsDaySmallScene_1
+  scene2: ShuaiAssets/LazyPplKidsDaySmallScene_2
+  sceneButton: 256
   loadMode: 0
+--- !u!114 &6748264809108320865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9109304252753589671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228ceda65acd0cf4daefc9fe193447a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startButton: 512

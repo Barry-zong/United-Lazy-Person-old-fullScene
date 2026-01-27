@@ -44147,7 +44147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6731c1c1d78ff1448b81e0ed96ea5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 300
+  totalTime: 120
   pauseGameWhenFinished: 0
   countdownText: {fileID: 9124305165768176787}
   teleport: {fileID: 1294623176}

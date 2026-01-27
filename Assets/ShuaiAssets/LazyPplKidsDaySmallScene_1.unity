@@ -44115,7 +44115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6731c1c1d78ff1448b81e0ed96ea5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 300
+  totalTime: 120
   pauseGameWhenFinished: 0
   countdownText: {fileID: 9124305165768176787}
   teleport: {fileID: 1294623176}
@@ -93880,7 +93880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9109304252753589671, guid: 42450e9e8eee7814e85df4a697256a5c, type: 3}
       propertyPath: m_Name
-      value: SceneManager
+      value: GameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
