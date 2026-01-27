@@ -41491,8 +41491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testScore: 0
-  growthDuration: 2.5
-  firstGrowthDuration: 5
+  growthDuration: 5
+  firstGrowthDuration: 7
   growthDelay: 2
 --- !u!1 &955993970
 GameObject:
