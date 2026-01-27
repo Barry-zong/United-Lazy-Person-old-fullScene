@@ -16295,13 +16295,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1274615414107101784, guid: d21a6233649217d4498cb7fcf3cf9c31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 704549958}
   m_SourcePrefab: {fileID: 100100000, guid: d21a6233649217d4498cb7fcf3cf9c31, type: 3}
 --- !u!224 &704549956 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 185386998650280007, guid: d21a6233649217d4498cb7fcf3cf9c31, type: 3}
   m_PrefabInstance: {fileID: 704549955}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &704549957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1274615414107101784, guid: d21a6233649217d4498cb7fcf3cf9c31, type: 3}
+  m_PrefabInstance: {fileID: 704549955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &704549958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704549957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2d7d89889b4d94fa1f8d6fe49788e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 0}
+  m_TargetOffset: {x: 0, y: 0, z: 0.8}
+  m_FollowInLocalSpace: 0
+  m_ApplyTargetInLocalSpace: 0
+  m_MovementSpeed: 6
+  m_MovementSpeedVariancePercentage: 0.25
+  m_SnapOnEnable: 1
+  m_PositionFollowMode: 1
+  m_MinDistanceAllowed: 0.01
+  m_MaxDistanceAllowed: 0.3
+  m_TimeUntilThresholdReachesMaxDistance: 3
+  m_RotationFollowMode: 1
+  m_MinAngleAllowed: 0.1
+  m_MaxAngleAllowed: 5
+  m_TimeUntilThresholdReachesMaxAngle: 3
 --- !u!1001 &705465971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31331,7 +31366,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348680003}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bf0b1818b8815749ab27e7cb612a99b, type: 3}
   m_Name: 
