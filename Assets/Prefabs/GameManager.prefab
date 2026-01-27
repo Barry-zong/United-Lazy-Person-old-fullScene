@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: ShuaiAssets/LazyPplKidsDaySmallScene_1
   scene2: ShuaiAssets/LazyPplKidsDaySmallScene_2
-  sceneButton: 1048576
+  sceneButton: 514
   loadMode: 0
 --- !u!114 &6748264809108320865
 MonoBehaviour:
