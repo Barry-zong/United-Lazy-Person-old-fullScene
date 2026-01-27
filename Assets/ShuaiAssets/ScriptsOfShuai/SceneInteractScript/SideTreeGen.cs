@@ -31,7 +31,7 @@ public class SideTreeGen : MonoBehaviour
         if (treeForest == null) return;
 
         // 检查分数是否大于8
-        if (ScoreSystem.Instance.GetCurrentScore() > 8)
+        if (ScoreSystem.Instance.GetCurrentScore() > 3)
         {
             if (!treeForest.activeSelf)
             {
