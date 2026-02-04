@@ -30180,6 +30180,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 500440814109636267, guid: 4c0133a569f3da349a33c696b2819b59, type: 3}
     - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
+      propertyPath: _randomSeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: _pauseGrowth
       value: 1
       objectReference: {fileID: 0}
@@ -30193,7 +30197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: _useRandomSeed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5025247159355155067, guid: b0ffd2b6e78187142affc9270c061def, type: 3}
       propertyPath: _scoreThreshold
