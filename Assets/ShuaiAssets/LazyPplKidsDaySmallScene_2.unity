@@ -6505,6 +6505,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.162
       objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0627
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580078610037822841, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4039292284398078676, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: ObjSort
       value: 1
@@ -17422,17 +17430,37 @@ PrefabInstance:
       propertyPath: m_text
       value: Toothpaste
       objectReference: {fileID: 0}
+    - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_fontSize
+      value: 7.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 7.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0076
+      objectReference: {fileID: 0}
+    - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0076
+      objectReference: {fileID: 0}
+    - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.0076
+      objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.053
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.204
+      value: 0.535
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.074
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17469,6 +17497,18 @@ PrefabInstance:
     - target: {fileID: 717693004251282258, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.321
       objectReference: {fileID: 0}
     - target: {fileID: 4039292284398078676, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: ObjSort
@@ -32615,6 +32655,18 @@ PrefabInstance:
     - target: {fileID: 717693004251282258, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934330379159682538, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4039292284398078676, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: ObjSort
