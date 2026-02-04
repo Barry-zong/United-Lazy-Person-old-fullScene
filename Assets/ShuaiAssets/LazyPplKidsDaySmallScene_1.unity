@@ -2666,7 +2666,7 @@ Light:
   serializedVersion: 11
   m_Type: 3
   m_Color: {r: 1, g: 0.99090827, b: 0.94654083, a: 1}
-  m_Intensity: 1.67
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9155,7 +9155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &406413683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13968,6 +13968,10 @@ PrefabInstance:
     - target: {fileID: 7799603317716827270, guid: 8c55d7338aa368f4e832ac2e9cff6f13, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338354224489124704, guid: 8c55d7338aa368f4e832ac2e9cff6f13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39473,7 +39477,7 @@ Transform:
   m_GameObject: {fileID: 1748132213}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6510645, y: 0.26833776, z: -0.6576445, w: 0.26760715}
-  m_LocalPosition: {x: -10.239, y: -0.881, z: 1.602}
+  m_LocalPosition: {x: -11.114, y: -0.881, z: 1.425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39513,7 +39517,7 @@ Light:
   serializedVersion: 11
   m_Type: 3
   m_Color: {r: 1, g: 0.99090827, b: 0.94654083, a: 1}
-  m_Intensity: 1.81
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -44976,7 +44980,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.7940252, b: 0.3820755, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -46165,7 +46169,7 @@ Transform:
   m_GameObject: {fileID: 2037449166}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.303, y: 0.5109, z: 8.255}
+  m_LocalPosition: {x: -15.303, y: 0.5109, z: 8.722}
   m_LocalScale: {x: 0.16326, y: 0.054762784, z: 0.16326}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49634,7 +49638,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.9163469, b: 0.6556604, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 0.2
   m_Range: 3.24
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
