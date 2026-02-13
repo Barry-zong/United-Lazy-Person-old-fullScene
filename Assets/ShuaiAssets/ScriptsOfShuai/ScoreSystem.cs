@@ -9,13 +9,14 @@ public class ScoreSystem : MonoBehaviour
 
     [Header("Score Settings")]
     [SerializeField] private string scorePrefix = "Score: ";
+    [SerializeField] private int maxScore = 20; // 达到这个分数时游戏结束
 
     [Header("Audio Settings")]
     [SerializeField] private AudioSource scoreAudioSource; // 音频源组件
     
 
     // 分数变量，后续会使用NetworkVariable
-    private int currentScore = 0;
+    [SerializeField] private int currentScore = 0;
     private bool canAddScore = true; // 控制是否允许加分
 
     // 单例模式，使其他脚本可以访问
@@ -69,6 +70,16 @@ public class ScoreSystem : MonoBehaviour
 
         // 初始化显示
         UpdateScoreDisplay(currentScore);
+    }
+
+    void Update()
+    {
+        if (currentScore >= maxScore)
+        {
+            Debug.Log("达到最高分数，游戏结束！");
+            if (GameStateCenter.Instance != null)
+                GameStateCenter.Instance.SetGameState(GameState.GameOver);
+        }
     }
 
     // 供外部调用的加分方法
