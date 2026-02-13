@@ -24288,7 +24288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1843089602}
   scorePrefix: 
+  maxScore: 13
   scoreAudioSource: {fileID: 1843089604}
+  currentScore: 0
 --- !u!4 &1018908203
 Transform:
   m_ObjectHideFlags: 0
