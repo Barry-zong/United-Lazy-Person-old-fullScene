@@ -37,7 +37,8 @@ public class EndingEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CountdownTimer.Instance.IsTimerFinished && !hasEnded)
+        //if (CountdownTimer.Instance.IsTimerFinished && !hasEnded)
+        if (GameStateCenter.Instance.GetGameState() == GameState.GameOver && !hasEnded)
         {
             hasEnded = true;
             endTime = Time.time;

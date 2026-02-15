@@ -43,6 +43,12 @@ public class GameStateCenter : MonoBehaviour
             }
         }
     }
+    
+    // External query method for current game state.
+    public GameState GetGameState()
+    {
+        return CurrentState;
+    }
 
     // 状态改变事件
     public delegate void GameStateChangedHandler(GameState newState);

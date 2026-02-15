@@ -1,10 +1,19 @@
 # ninja log v5
+224	1728	7911983179002861	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	ca5e47c857e174bd
 42	1419	7911983175849992	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	98d2c62d31e99fa2
 109	1496	7911983176639137	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	522eeb05bdc22532
 148	1562	7911983177319069	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	255d2d2d6c4fe33a
-75	1569	7911983177372053	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2297ecc7f422453
 266	1695	7911983178683648	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	3bf2acd28a8bdabc
-224	1728	7911983179002861	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	ca5e47c857e174bd
+75	1569	7911983177372053	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2297ecc7f422453
 1	1854	7911983180268145	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b71c98942957521b
 186	1907	7911983180778588	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2dbcbe933a956fc9
 1909	2096	7911983182696195	E:/GithubProjectRepository/United-Lazy-Person-old-fullScene/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1v4r3t6v/obj/arm64-v8a/libgame.so	3ac9df5536522302
+40	1473	7928193953543238	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	98d2c62d31e99fa2
+70	1518	7928193953977464	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	255d2d2d6c4fe33a
+145	1582	7928193954643191	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	3bf2acd28a8bdabc
+182	1590	7928193954704382	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	522eeb05bdc22532
+106	1607	7928193954853122	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2297ecc7f422453
+251	1823	7928193957041646	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	ca5e47c857e174bd
+9	1928	7928193958107276	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b71c98942957521b
+217	2007	7928193958894328	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2dbcbe933a956fc9
+2007	2171	7928193960572205	E:/GithubProjectRepository/United-Lazy-Person-old-fullScene/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1v4r3t6v/obj/arm64-v8a/libgame.so	3ac9df5536522302

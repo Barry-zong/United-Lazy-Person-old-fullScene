@@ -1532,15 +1532,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0045429515
+      value: 0.0032312197
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0045429515
+      value: 0.0032312197
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0045429515
+      value: 0.0032312197
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: def50e915c9efda44b102ba31c1a6be8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13708,15 +13708,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 181.74185
+      value: 300.61917
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 181.74185
+      value: 300.61917
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 181.74185
+      value: 300.61917
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13724,7 +13724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.4
+      value: 48.8
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41679,15 +41679,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_text
-      value: STEAK
+      value: Stinky STEAK
       objectReference: {fileID: 0}
     - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_fontSize
-      value: 20.66
+      value: 18.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_margin.x
+      value: 3.8896332
+      objectReference: {fileID: 0}
+    - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
+      propertyPath: m_margin.z
+      value: -4.003872
       objectReference: {fileID: 0}
     - target: {fileID: 69295451621517950, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20.66
+      value: 18.33
       objectReference: {fileID: 0}
     - target: {fileID: 317649035993525351, guid: 99bd0fcf9b16dfc4998f896eb4bcae4b, type: 3}
       propertyPath: m_LocalPosition.x
